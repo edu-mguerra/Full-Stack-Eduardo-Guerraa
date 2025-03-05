@@ -3,7 +3,6 @@ import "./style.css";
 
 export default function Projects() {
   const { loading, currentProjects, error, nextSlide, prevSlide } = useGitHubRepos();
-  const projectsPerSlide = window.innerWidth <= 768 ? currentProjects.length : 4;
 
 
   if (loading) return <p>Carregando...</p>;
