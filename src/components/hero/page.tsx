@@ -9,10 +9,11 @@ export const Hero = () => {
     <div className='section'>
       <div className='videoContainer'>
         <video autoPlay loop muted className='videoBackground'>
-          <source src="/videos/1.mp4" type="video/mp4" />
+          <source src="https://static.videezy.com/system/resources/previews/000/007/313/original/Plexus.mp4" type="video/mp4" />
           Seu navegador não suporta vídeos.
         </video>
       </div>
+
 
       <ImageSwitcher />
 
