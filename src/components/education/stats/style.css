@@ -1,0 +1,145 @@
+.github-stats {
+  background-color: #334155;
+  ;
+  padding: 10px 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.8s ease-in-out, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-stats h4 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.github-stats:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* Leve destaque ao passar o mouse */
+}
+
+.github-stats div a {
+  text-decoration: none;
+  display: block;
+}
+
+.github-card {
+  margin-top: 30px;
+  background-color: #181717;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.github-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.github-card-content {
+  text-align: center;
+}
+
+.github-card h4 {
+  font-size: 20px;
+  /* Tamanho maior para chamar atenção */
+  color: #ffffff;
+  margin: 0;
+}
+
+.github-card p {
+  font-size: 16px;
+  color: #eeeeee;
+  /* Um tom de cinza claro para o texto */
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .github-stats {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  .github-card {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .gitStatsImg {
+    width: 100%;
+    margin-bottom: -20px;
+
+  }
+
+  .github-stats h3 {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+
+
+  .github-card {
+    padding: 4px;
+    width: 100%;
+  }
+
+  .github-card h2 {
+    font-size: 17px;
+  }
+
+  .github-card p {
+    font-size: 13px;
+  }
+
+  .github-card-content {
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+
+
+  .github-stats h3 {
+    font-size: 25px;
+  }
+
+  .gitStatsImg {
+    width: 100%;
+    margin-bottom: -40px;
+  }
+
+  .github-card h2 {
+    font-size: 15px;
+  }
+
+  .github-card-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 321px) {
+  .github-card h2 {
+    font-size: 13px;
+  }
+
+  .github-card-content {
+    padding: 10px;
+  }
+
+}
