@@ -1,7 +1,7 @@
 import { Certificate } from 'crypto';
 import './style.css';
 import { Certificatee } from './certifica/certificate';
-import { Stats } from './stats/page';
+
 
 export default function Education() {
   return (
@@ -17,7 +17,6 @@ export default function Education() {
       <Certificatee />
       <br></br>
       <br></br>
-      <Stats />
 
     </section>
   );
