@@ -4,7 +4,7 @@ export default function About() {
 
   return (
     <>
-      <h3 className="titleAbout">Sobre Mim</h3>
+      <h3 className="titleAbout">Quem sou</h3>
       <div className="containerAbout">
         <div className="aboutMe">
 

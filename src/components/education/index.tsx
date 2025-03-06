@@ -6,9 +6,10 @@ import { Stats } from './stats/page';
 export default function Education() {
   return (
     <section className="education">
-      <h2>Capacitação</h2>
+
 
       <div className="educationItem">
+        <h2>Formação</h2>
         <h3>Graduando em Análise e Desenvolvimento de Sistemas</h3>
         <p className="institution">Universidade Federal do Vale do São Francisco ( UNIVASF )</p>
         <p className="date">2024 - 2027</p>

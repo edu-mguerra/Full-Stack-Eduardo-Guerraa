@@ -1,6 +1,4 @@
-import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageSwitcher from './sectionImg';
 
 export const Hero = () => {

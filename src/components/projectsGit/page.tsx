@@ -11,7 +11,7 @@ export default function Projects() {
   return (
     <div >
       <div className="container">
-        <h1 className="titleProject">Meus Projetos no GitHub</h1>
+        <h1 className="titleProject">Meus Projetos</h1>
       </div>
       <div className="central-slider">
         <button onClick={prevSlide} className="nav-btn">{"<"}</button>
@@ -22,7 +22,14 @@ export default function Projects() {
               <a href={project.html_url} target="_blank" rel="noopener noreferrer">
                 <h3>{project.name}</h3>
               </a>
-              <p>{project.description || "Sem descrição disponível."}</p>
+
+              <p>
+                {project.description && project.description.length > 70
+                  ? `${project.description.substring(0, 70)}...`
+                  : project.description || "Sem descrição disponível."
+                }
+              </p>
+
               <p>
                 <strong>Linguagem:</strong> {project.language || "Desconhecida"}
               </p>

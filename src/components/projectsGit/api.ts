@@ -23,7 +23,7 @@ export const useGitHubRepos = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const projectsPerSlide = 4;
+  const projectsPerSlide = 3;
 
   const gitMyApi = "https://api.github.com/users/edu-mguerra/repos";
 
