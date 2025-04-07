@@ -1,5 +1,6 @@
 import './style.css';
 import ImageSwitcher from './sectionImg';
+import { BorderBeam } from './button/button';
 
 export const Hero = () => {
 
@@ -20,26 +21,37 @@ export const Hero = () => {
           <h2 className='title'>Eduardo Guerra</h2>
           <p className='description'>DESENVOLVEDOR FULL STACK</p>
 
-          <div className='buttonContainer'>
-            <a href='/cv/curriculoDEV.pdf'
-              download='Curriculo Eduardo Guerra'
-              className='buttonH'>
-              Download CV
-            </a>
+          <div className="buttonContainer">
+            <div className="relative inline-block">
+              <a
+                href="/cv/curriculoDEV.pdf"
+                download="Curriculo Eduardo Guerra"
+                className="buttonH relative z-10"
+              >
+                Download CV
+              </a>
+              <BorderBeam />
+            </div>
 
-            <a href='mailto:eduguerra.dev@gmail.com'
-              className='buttonH'>
-              Contact me
-            </a>
+            <div className="relative inline-block">
+              <a
+                href="mailto:eduguerra.dev@gmail.com"
+                className="buttonH relative z-10"
+              >
+                Contact me
+              </a>
+              <BorderBeam />
+            </div>
           </div>
-
         </div>
-
 
       </div>
 
 
-    </div >
+    </div>
+
+
+
   )
 }
 
