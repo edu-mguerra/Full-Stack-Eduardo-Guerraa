@@ -1,6 +1,5 @@
 import './style.css';
 import ImageSwitcher from './sectionImg';
-import { BorderBeam } from './button/button';
 
 export const Hero = () => {
 
@@ -30,7 +29,6 @@ export const Hero = () => {
               >
                 Download CV
               </a>
-              <BorderBeam />
             </div>
 
             <div className="relative inline-block">
@@ -40,7 +38,6 @@ export const Hero = () => {
               >
                 Contact me
               </a>
-              <BorderBeam />
             </div>
           </div>
         </div>

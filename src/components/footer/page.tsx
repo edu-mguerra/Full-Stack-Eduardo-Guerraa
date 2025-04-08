@@ -18,6 +18,7 @@ export default function Footer() {
           <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
         </a>
       </div>
+
     </footer>
 
   )
