@@ -24,8 +24,11 @@ export const Certificatee = () => {
           <h4>Back-End</h4>
           <div className="skills-icons">
             <img alt="Node.js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" />
+            <img alt="PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" />
+            <img alt="Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
           </div>
         </div>
+
       </div>
 
       <div className="skills-row">
