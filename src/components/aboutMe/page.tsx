@@ -9,10 +9,11 @@ export default function About() {
         <div className="aboutMe">
 
           <p>
-            Olá, sou Eduardo Guerra, desenvolvedor full-stack apaixonado por tecnologia. Comecei minha jornada na programação por curiosidade, com foco no front-end, o que me ajudou a entender as bases do desenvolvimento web. Hoje, trabalho com TypeScript, React.js, Next.js e Node.js no back-end, além de estudar Java para expandir meus conhecimentos.
+            Olá, meu nome é Eduardo Guerra e sou apaixonado por criar soluções inovadoras no mundo da tecnologia. Comecei minha jornada no desenvolvimento web como autodidata, explorando principalmente o front-end, e rapidamente me apaixonei pelo potencial de transformar ideias em interfaces interativas. Atualmente, sou desenvolvedor full-stack, trabalhando com tecnologias como TypeScript, React.js, Next.js e Node.js.
             <br />
-            Embora tenha preferência por atuar como desenvolvedor full-stack, tenho interesse em explorar tanto o front-end quanto o back-end. Meu principal objetivo é me tornar um profissional cada vez melhor, sempre focado no aprendizado contínuo e em alcançar ótimos resultados em cada desafio.
+            Além disso, estou me aprofundando em Python e PHP para expandir meu conhecimento e poder atuar em uma variedade ainda maior de projetos. Meu foco é continuar aprendendo e aprimorando minhas habilidades, tanto no front-end quanto no back-end. Tenho um grande interesse em como as diferentes partes de um sistema se conectam e colaboram para entregar uma experiência de usuário incrível. Busco sempre me desafiar e evoluir como profissional, com o objetivo de criar soluções eficientes e escaláveis.
           </p>
+
 
 
         </div>

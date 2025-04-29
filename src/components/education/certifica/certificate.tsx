@@ -38,18 +38,28 @@ export const Certificatee = () => {
             <img alt="MySQL" height="40" width="40" src="https://www.svgrepo.com/show/373848/mysql.svg" />
             <img alt="SQL" height="40" width="40" src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" />
             <img alt="MongoDB" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" />
-
+            <img alt="SQLite" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" />
           </div>
         </div>
+
 
         <div className="skills-category4">
           <h4>Outros</h4>
           <div className="skills-icons">
             <img alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
             <img alt="Figma" height="30" width="40" src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" />
-            <img alt="WordPress" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg" />
+
+            {/* Novo ícone de cibersegurança - Escudo */}
+            <img alt="Proteção Firewall" height="30" width="40" src="https://www.svgrepo.com/show/381159/protection-firewall-security-shield-antivirus.svg" />
+
+
+
+
+            <img alt="WordPress" height="30" width="40" src="https://cdn-icons-png.flaticon.com/512/174/174881.png" />
+
           </div>
         </div>
+
       </div>
     </div>
   )
