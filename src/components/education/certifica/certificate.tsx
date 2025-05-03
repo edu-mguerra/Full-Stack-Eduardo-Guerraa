@@ -25,7 +25,6 @@ export const Certificatee = () => {
           <div className="skills-icons">
             <img alt="Node.js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" />
             <img alt="PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" />
-            <img alt="Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
           </div>
         </div>
 
@@ -49,7 +48,6 @@ export const Certificatee = () => {
             <img alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
             <img alt="Figma" height="30" width="40" src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" />
 
-            {/* Novo ícone de cibersegurança - Escudo */}
             <img alt="Proteção Firewall" height="30" width="40" src="https://www.svgrepo.com/show/381159/protection-firewall-security-shield-antivirus.svg" />
 
 
