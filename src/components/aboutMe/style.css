@@ -50,6 +50,10 @@
 
 
 @media (max-width: 768px) {
+  .containerAbout {
+    flex-direction: column-reverse;
+  }
+
   .aboutMe {
     width: 80%;
     margin-bottom: 10px;
