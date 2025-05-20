@@ -25,8 +25,10 @@ export const Certificatee = () => {
           <div className="skills-icons">
             <img alt="Node.js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" />
             <img alt="PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" />
+            <img alt="Firebase" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" />
           </div>
         </div>
+
 
       </div>
 
@@ -37,7 +39,10 @@ export const Certificatee = () => {
             <img alt="MySQL" height="40" width="40" src="https://www.svgrepo.com/show/373848/mysql.svg" />
             <img alt="SQL" height="40" width="40" src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" />
             <img alt="MongoDB" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" />
-            <img alt="SQLite" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" />
+            <img alt="SQLite" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" />
+
+
+
           </div>
         </div>
 
@@ -47,12 +52,6 @@ export const Certificatee = () => {
           <div className="skills-icons">
             <img alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
             <img alt="Figma" height="30" width="40" src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" />
-
-            <img alt="Proteção Firewall" height="30" width="40" src="https://www.svgrepo.com/show/381159/protection-firewall-security-shield-antivirus.svg" />
-
-
-
-
             <img alt="WordPress" height="30" width="40" src="https://cdn-icons-png.flaticon.com/512/174/174881.png" />
 
           </div>

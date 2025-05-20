@@ -14,7 +14,7 @@
 
 
 .image {
-  width: 80%;
+  max-width: 80%;
   height: auto;
   border-radius: 70%;
   border: 1px solid whitesmoke;

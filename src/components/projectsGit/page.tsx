@@ -24,8 +24,8 @@ export default function Projects() {
               </a>
 
               <p>
-                {project.description && project.description.length > 70
-                  ? `${project.description.substring(0, 70)}...`
+                {project.description && project.description.length > 200
+                  ? `${project.description.substring(0, 200)}...`
                   : project.description || "Sem descrição disponível."
                 }
               </p>

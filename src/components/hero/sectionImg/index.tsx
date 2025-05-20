@@ -4,8 +4,8 @@ import './ImageSwitcher.css'; // Arquivo CSS para estilo
 const ImageSwitcher = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/images/img1.jpg', //0
-    '/images/img2.jpg', // 1
+    '/images/img1.jpeg', //0
+    '/images/img2.jpeg', // 1
   ];
 
   useEffect(() => {
