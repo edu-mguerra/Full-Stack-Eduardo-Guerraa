@@ -1,4 +1,5 @@
 .orbit-circle {
+    display: none;
     position: fixed;
     width: 10px;
     height: 10px;
@@ -8,16 +9,8 @@
     z-index: 9999;
 }
 
-
-
 @media (hover: hover) and (pointer: fine) {
     .orbit-circle {
         display: block;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) {
-    .orbit-circle {
-        display: none;
     }
 }
