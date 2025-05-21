@@ -1,18 +1,29 @@
-import { useEffect, useRef } from 'react';
-import './app.css'
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
+import './app.css';
 
 const NUM_CIRCLES = 7;
 const RADIUS = 30;
 
 export default function TrailingCursor() {
     const circleRefs = useRef([]);
-    const mouse = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+    const mouse = useRef({ x: 0, y: 0 });
     const angleOffsets = useRef(
         Array(NUM_CIRCLES).fill(0).map((_, i) => (i * (2 * Math.PI)) / NUM_CIRCLES)
     );
     const rotation = useRef(0);
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
+
+        setIsClient(true);
+
+        mouse.current = {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2,
+        };
+
         const handleMouseMove = (e) => {
             mouse.current = { x: e.clientX, y: e.clientY };
         };
@@ -29,7 +40,7 @@ export default function TrailingCursor() {
 
                 const el = circleRefs.current[i];
                 if (el) {
-                    el.style.transform = `translate(${x - 5}px, ${y - 5}px)`; //
+                    el.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
                 }
             }
 
@@ -38,20 +49,24 @@ export default function TrailingCursor() {
 
         animate();
 
-        return () => document.removeEventListener('mousemove', handleMouseMove);
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
     }, []);
+
+    if (!isClient) return null;
 
     return (
         <>
             {Array.from({ length: NUM_CIRCLES }).map((_, i) => (
                 <div
                     key={i}
-                    ref={(el) => (circleRefs.current[i] = el)}
+                    ref={(el) => {
+                        if (el) circleRefs.current[i] = el;
+                    }}
                     className="orbit-circle"
                 />
             ))}
         </>
     );
-};
-
-
+}
