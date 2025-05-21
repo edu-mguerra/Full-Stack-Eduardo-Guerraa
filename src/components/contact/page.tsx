@@ -6,8 +6,9 @@ export default function Contact() {
     <section className="contato">
       <h2>Entre em Contato</h2>
       <p>Se você deseja conversar ou tem alguma dúvida, não hesite em me contatar!
-        <br></br>
-        Aqui estão minhas formas de contato:</p>
+        Aqui estão minhas formas de contato:
+
+      </p>
 
       <div className="contato-opcoes">
 

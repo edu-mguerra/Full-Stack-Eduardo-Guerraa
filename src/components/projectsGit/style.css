@@ -108,11 +108,21 @@
     overflow: visible;
   }
 
+  .titleProject {
+    font-size: 1.6rem;
+  }
 
   .project-item {
     width: 79%;
-
     height: auto;
+  }
+
+  .project-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-item p {
+    font-size: 1rem;
   }
 
   .nav-btn {

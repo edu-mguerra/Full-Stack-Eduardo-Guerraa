@@ -6,12 +6,14 @@ import { Hero } from "@/components/hero/page";
 import Projects from "@/components/projectsGit/page";
 import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
+import TrailingCursor from "@/components/TrailingCursor/TrailingCursor";
 
 
 
 export default function Home() {
   return (
     <>
+      <TrailingCursor />
       <Hero />
       <Education />
       <Projects />

@@ -69,7 +69,11 @@
 @media (max-width: 768px) {
   .contato p {
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 
+  }
+
+  .contato h2 {
+    font-size: 1.7rem !important;
   }
 }
