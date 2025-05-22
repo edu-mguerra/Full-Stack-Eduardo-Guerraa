@@ -13,7 +13,7 @@ import TrailingCursor from "@/components/TrailingCursor/TrailingCursor";
 export default function Home() {
   return (
     <>
-      <TrailingCursor />
+
       <Hero />
       <Education />
       <Projects />
