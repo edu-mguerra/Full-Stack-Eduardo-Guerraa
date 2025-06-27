@@ -31,7 +31,7 @@
 }
 
 .project-item {
-  background-color: #334155;
+  background-color: #000;
   border: 1px solid #fff;
   padding: 20px;
   border-radius: 8px;
@@ -65,7 +65,10 @@
 }
 
 .nav-btn {
-  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
   color: white;
   border: none;
   padding: 10px 15px;

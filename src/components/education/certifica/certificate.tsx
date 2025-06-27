@@ -15,7 +15,7 @@ export const Certificatee = () => {
             <img alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
             <img alt="TypeScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" />
             <img alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" />
-            <img alt="Next.js" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" />
+            <img alt="Next.js" height="30" width="40"style={{ background: '#fff', borderRadius:'100%' }} src="https://www.svgrepo.com/show/368858/nextjs.svg" />
             <img alt="Vue.js" height="30" width="40" src="https://br.vuejs.org/images/logo.svg" />
           </div>
         </div>

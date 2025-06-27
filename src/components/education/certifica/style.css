@@ -1,5 +1,6 @@
 .certifications {
-  background-color: #334155;
+  background-color: #000;
+  border: 1px solid #fff;
   padding: 40px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -33,7 +34,7 @@
 .skills-category4 {
   flex: 1;
   padding: 20px;
-  background-color: #334155;
+  background-color: #000;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -58,6 +59,7 @@
   flex-wrap: wrap;
   gap: 18px;
   justify-content: center;
+  ;
 
 
 }

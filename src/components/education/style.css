@@ -16,12 +16,13 @@
 }
 
 .educationItem {
-  background-color: #334155;
+  background-color: #000;
   width: 80%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  border: 1px solid #fff;
 
 }
 

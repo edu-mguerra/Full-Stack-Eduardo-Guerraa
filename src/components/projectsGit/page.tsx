@@ -24,19 +24,19 @@ export default function Projects() {
               </a>
 
               <p>
-                {project.description && project.description.length > 200
-                  ? `${project.description.substring(0, 200)}...`
+                {project.description && project.description.length > 50
+                  ? `${project.description.substring(0, 50)}...`
                   : project.description || "Sem descrição disponível."
                 }
               </p>
 
               <p>
-                <strong>Linguagem:</strong> {project.language || "Desconhecida"}
+                <strong>Stack:</strong> {project.language || "Desconhecida"}
               </p>
               <p>
                 ⭐ {project.stargazers_count} | 🍴 {project.forks_count}
               </p>
-              <p>📅 Criado em: {new Date(project.created_at).toLocaleDateString()}</p>
+             
             </div>
           ))}
 
