@@ -10,7 +10,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/eduardo-guerra-mh/" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
         </a>
-        <a href="https://wa.me/558791065219" target="_blank">
+        <a href="https://wa.me/5587992020340" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
         </a>
 

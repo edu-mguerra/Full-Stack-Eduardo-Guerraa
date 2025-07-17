@@ -33,7 +33,7 @@ export const Hero = () => {
 
             <div className="relative inline-block">
               <a
-                href="https://www.linkedin.com/in/eduardo-guerra-mh/"
+                href="https://wa.me/5587992020340"
                 className="buttonH relative z-10"
                 target='_blank'
               >

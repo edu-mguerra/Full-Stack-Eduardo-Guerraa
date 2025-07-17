@@ -12,7 +12,7 @@ export default function Contact() {
 
       <div className="contato-opcoes">
 
-        <a href="https://wa.me/558791065219" className="btn-social" target="_blank">
+        <a href="https://wa.me/5587992020340" className="btn-social" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /> WhatsApp
         </a>
 
