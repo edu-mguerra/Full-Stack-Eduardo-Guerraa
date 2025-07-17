@@ -1,3 +1,4 @@
+/* Container da seção */
 .container {
   margin-top: 50px;
   display: flex;
@@ -6,13 +7,14 @@
 
 .titleProject {
   text-align: center;
-  font-size: 2.0rem;
+  font-size: 2rem;
   color: #fff;
   margin-bottom: 30px;
-  padding: 0px 20px;
+  padding: 0 20px;
   border-radius: 10px;
 }
 
+/* Slider de projetos */
 .central-slider {
   display: flex;
   align-items: center;
@@ -30,40 +32,67 @@
   width: 80%;
 }
 
-.project-item {
-  background-color: #000;
-  border: 1px solid #fff;
+/* Novo card de projeto */
+.project-card {
+  background-color: #1e1e1e;
+  color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+  max-width: 300px;
   text-align: center;
-  width: 35%;
-  height: 330px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
-
+  height: 330px;
 }
 
-.project-item a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
-.project-item p {
-  font-size: 1rem;
-  color: #fff;
-  margin-top: 10px;
-}
-
-.project-item h3 {
-  font-size: 1.8rem;
+.project-title {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
+.project-description {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.project-stack {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.project-meta {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.project-links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 10px;
+  background-color: #333;
+  color: #f5f5f5;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #555;
+}
+
+/* Botões de navegação */
 .nav-btn {
   display: flex;
   justify-content: center;
@@ -82,6 +111,7 @@
   background-color: #0056b3;
 }
 
+/* Botão de ver todos os projetos */
 .containerButton {
   display: flex;
   justify-content: center;
@@ -101,8 +131,9 @@
   padding: 10px 20px;
   background-color: #fff;
   border-radius: 10px;
-
+  text-decoration: none;
 }
+
 
 @media (max-width: 768px) {
   .project-slide {
@@ -115,16 +146,19 @@
     font-size: 1.6rem;
   }
 
-  .project-item {
-    width: 79%;
+  .project-card {
+    width: 85%;
     height: auto;
+    max-width: none;
   }
 
-  .project-item h3 {
+  .project-title {
     font-size: 1.4rem;
   }
 
-  .project-item p {
+  .project-description,
+  .project-stack,
+  .project-meta {
     font-size: 1rem;
   }
 

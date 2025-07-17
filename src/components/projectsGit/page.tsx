@@ -8,6 +8,10 @@ export default function Projects() {
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Erro: {error}</p>;
 
+  function formatRepoName(name : string) {
+  return name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+}
+
   return (
     <div >
       <div className="container">
@@ -18,26 +22,31 @@ export default function Projects() {
 
         <div className="project-slide">
           {currentProjects.map((project) => (
-            <div key={project.id} className="project-item">
-              <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                <h3>{project.name}</h3>
-              </a>
+            <div key={project.id} className="project-card">
+              <h3 className="project-title">{formatRepoName(project.name)}</h3>
 
-              <p>
-                {project.description && project.description.length > 50
-                  ? `${project.description.substring(0, 50)}...`
-                  : project.description || "Sem descrição disponível."
-                }
+              <p className="project-description">
+                {project.description && project.description.length > 80
+                  ? `${project.description.substring(0, 80)}...`
+                  : project.description || "Sem descrição disponível."}
               </p>
 
-              <p>
+              <p className="project-stack">
                 <strong>Stack:</strong> {project.language || "Desconhecida"}
               </p>
-              <p>
+
+              <div className="project-meta">
                 ⭐ {project.stargazers_count} | 🍴 {project.forks_count}
-              </p>
-             
+              </div>
+
+              <div className="project-links">
+                <a href={project.html_url} target="_blank" rel="noopener noreferrer">
+                  🔗 Ver no GitHub
+                </a>
+               
+              </div>
             </div>
+
           ))}
 
         </div>
