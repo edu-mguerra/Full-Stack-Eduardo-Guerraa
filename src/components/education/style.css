@@ -1,97 +1,577 @@
 .education {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.education h2 {
+.education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.educationHeader {
   text-align: center;
-  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.educationHeader h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headerLine {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.educationContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.educationSection {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 30px;
-  padding: 0px 20px;
-  border-radius: 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.educationItems {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .educationItem {
-  background-color: #000;
-  width: 80%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #fff;
-
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.educationItem h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
+.educationItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.educationItem:hover::before {
+  left: 100%;
+}
+
+.educationItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(102, 126, 234, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.educationIcon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.educationItem:hover .educationIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.educationDetails {
+  flex: 1;
+}
+
+.educationDetails h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 10px;
-
+  line-height: 1.4;
 }
 
-
-.educationItem .institution {
+.institution {
   font-size: 1.2rem;
-  color: #fff;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-weight: 300;
 }
 
-.educationItem .date {
-  font-size: 1.1rem;
-  color: #fff;
+.educationMeta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 
-.educationItem .description {
+.date {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.status {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status.experience {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.experienceDescription {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experienceDescription p {
   font-size: 1rem;
-  color: #333;
-  margin-top: 10px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-weight: 300;
+  margin: 0;
 }
 
-@media (max-width: 780px) {
+.componentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .education {
+    padding: 70px 35px;
+  }
+  
+  .educationContent {
+    max-width: 1000px;
+  }
+  
   .educationItem {
-    width: auto;
+    padding: 25px;
+    gap: 20px;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.4rem;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1024px) {
+  .education {
+    padding: 60px 30px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .educationSection {
+    padding: 30px 25px;
+  }
+  
   .educationItem {
-    width: auto;
+    padding: 25px 20px;
   }
-
-  .educationItem h3 {
-    font-size: 22px;
+  
+  .educationIcon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
   }
-
-  .educationItem .institution {
-    font-size: 18px;
+  
+  .educationDetails h3 {
+    font-size: 1.35rem;
   }
-}
-
-@media (max-width: 390px) {
-  .educationItem h3 {
-    font-size: 19px;
-  }
-
-  .educationItem .institution {
-    font-size: 15px;
+  
+  .institution {
+    font-size: 1.15rem;
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 900px) {
+  .educationContent {
+    gap: 40px;
+  }
+  
+  .educationSection {
+    padding: 25px 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 50px 25px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .headerLine {
+    width: 80px;
+  }
+  
+  .educationContent {
+    gap: 35px;
+  }
+  
+  .educationSection {
+    padding: 25px;
+    border-radius: 18px;
+  }
+  
   .educationItem {
-    margin-bottom: 35px;
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 12px;
   }
-
-  .educationItem h3 {
-    font-size: 14px;
+  
+  .educationIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 10px;
   }
+  
+  .educationDetails h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+  
+  .institution {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  
+  .educationMeta {
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+    margin-bottom: 22px;
+  }
+  
+  .experienceDescription {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  
+  .experienceDescription p {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
 
-  .educationItem .institution {
-    font-size: 11px;
+@media (max-width: 640px) {
+  .education {
+    padding: 45px 20px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 2.1rem;
+  }
+  
+  .educationContent {
+    gap: 30px;
+  }
+  
+  .educationSection {
+    padding: 22px;
+  }
+  
+  .educationItems {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education {
+    padding: 40px 18px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .headerLine {
+    width: 70px;
+    height: 2.5px;
+  }
+  
+  .educationSection {
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .educationItem {
+    padding: 20px 18px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+  
+  .educationIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  
+  .institution {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  
+  .educationMeta {
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .date, .status {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    border-radius: 18px;
+  }
+  
+  .experienceDescription {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  .experienceDescription p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .componentsContainer {
+    gap: 35px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .education {
+    padding: 35px 15px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 1.9rem;
+  }
+  
+  .educationSection {
+    padding: 18px 15px;
+  }
+  
+  .educationItem {
+    padding: 18px 15px;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.18rem;
+  }
+  
+  .institution {
+    font-size: 1rem;
+  }
+  
+  .date, .status {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .education {
+    padding: 30px 12px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 1.8rem;
+  }
+  
+  .educationSection {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+  
+  .educationItem {
+    padding: 16px 12px;
+    border-radius: 10px;
+  }
+  
+  .educationIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.15rem;
+  }
+  
+  .institution {
+    font-size: 0.95rem;
+  }
+  
+  .educationMeta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .date, .status {
+    width: fit-content;
+  }
+  
+  .experienceDescription p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .educationHeader h2 {
+    font-size: 1.75rem;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.1rem;
+  }
+  
+  .institution {
+    font-size: 0.92rem;
+  }
+  
+  .date, .status {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .experienceDescription p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 280px) {
+  .education {
+    padding: 25px 10px;
+  }
+  
+  .educationHeader h2 {
+    font-size: 1.6rem;
+  }
+  
+  .educationSection {
+    padding: 14px 10px;
+  }
+  
+  .educationItem {
+    padding: 14px 10px;
+  }
+  
+  .educationDetails h3 {
+    font-size: 1.05rem;
+  }
+  
+  .institution {
+    font-size: 0.9rem;
   }
 }

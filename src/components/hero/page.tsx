@@ -3,53 +3,62 @@ import ImageSwitcher from './sectionImg';
 
 export const Hero = () => {
 
-  return (
-    <div className='section'>
-      <div className='videoContainer'>
-        <video autoPlay loop muted className='videoBackground'>
-          <source src="https://static.videezy.com/system/resources/previews/000/007/313/original/Plexus.mp4" type="video/mp4" />
-          Seu navegador não suporta vídeos.
-        </video>
-      </div>
+return (
+  <div className='section'>
+    <div className='videoContainer'>
+      <video autoPlay loop muted playsInline className='videoBackground'>
+        <source src="https://static.videezy.com/system/resources/previews/000/007/313/original/Plexus.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      <div className='videoOverlay'></div>
+    </div>
 
-
+    <div className='contentWrapper'>
       <ImageSwitcher />
-
+      
       <div className='textContainer'>
         <div className='divText'>
-          <h2 className='title'>Eduardo Guerra</h2>
-          <p className='description'>DESENVOLVEDOR FULL STACK</p>
+          <div className='titleWrapper'>
+            <h2 className='title'>Eduardo</h2>
+            <h2 className='title accent'>Guerra</h2>
+          </div>
+          
+          <div className='descriptionContainer'>
+            <div className='line'></div>
+            <p className='description'>DESENVOLVEDOR FULL STACK</p>
+            <div className='line'></div>
+          </div>
+
+          <p className='subtitle'>Criando soluções digitais inovadoras</p>
 
           <div className="buttonContainer">
-            <div className="relative inline-block">
+            <div className="buttonWrapper">
               <a
                 href="/cv/curriculoDEV.pdf"
                 download="Curriculo Eduardo Guerra"
-                className="buttonH relative z-10"
+                className="buttonH downloadBtn"
               >
-                Download CV
+                <span className="btnText">Download CV</span>
+                <div className="btnIcon">↓</div>
               </a>
             </div>
 
-            <div className="relative inline-block">
+            <div className="buttonWrapper">
               <a
                 href="https://wa.me/5587992020340"
-                className="buttonH relative z-10"
+                className="buttonH contactBtn"
                 target='_blank'
+                rel='noopener noreferrer'
               >
-                Contact me
+                <span className="btnText">Contact me</span>
+                <div className="btnIcon">→</div>
               </a>
             </div>
           </div>
         </div>
-
       </div>
-
-
     </div>
-
-
-
-  )
+  </div>
+)
 }
 

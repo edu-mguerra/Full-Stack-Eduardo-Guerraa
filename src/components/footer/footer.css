@@ -1,30 +1,253 @@
 .footer {
-  background-color: #000;
+  background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
   color: #fff;
+  padding: 60px 40px 30px 40px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footerText h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footerText p {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.footerDivider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+.footerQuote {
+  font-style: italic;
+  color: #888 !important;
+  font-size: 1rem !important;
+}
+
+.footerSocial h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 25px;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid #fff;
 }
 
-.footer p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.social-links {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
 
-.social-links a img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease-in-out;
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #b0b0b0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-links a img:hover {
-  transform: scale(1.2);
+.socialLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--social-color) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.socialLink:hover::before {
+  opacity: 0.1;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.socialIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.socialLink:hover .socialIcon img {
+  filter: brightness(1);
+  transform: scale(1.1);
+}
+
+.socialLink:hover .socialIcon {
+  transform: scale(1.1);
+}
+
+.socialName {
+  font-size: 0.9rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.footerDividerLarge {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  margin-bottom: 25px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 5px 0;
+  font-weight: 300;
+}
+
+.madeWith {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px 20px;
+  }
+  
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footerText h3 {
+    font-size: 1.8rem;
+  }
+  
+  .footerDivider {
+    margin: 20px auto;
+  }
+  
+  .socialGrid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .socialLink {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px 15px 15px;
+  }
+  
+  .footerText h3 {
+    font-size: 1.6rem;
+  }
+  
+  .footerText p {
+    font-size: 1rem;
+  }
+  
+  .footerSocial h4 {
+    font-size: 1.2rem;
+  }
+  
+  .socialLink {
+    padding: 12px 15px;
+  }
+  
+  .copyright p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .footerText h3 {
+    font-size: 1.4rem;
+  }
+  
+  .socialLink {
+    padding: 10px 12px;
+  }
+  
+  .socialName {
+    font-size: 0.85rem;
+  }
 }
