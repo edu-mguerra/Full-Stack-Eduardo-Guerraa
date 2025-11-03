@@ -48,7 +48,7 @@ export default function Education() {
             <div className="educationItem">
               <div className="educationIcon">🚀</div>
               <div className="educationDetails">
-                <h3>Analista de Desenvolvimento I</h3>
+                <h3>Desenvolvedor full stack</h3>
                 <p className="institution">GrandValle</p>
                 <div className="educationMeta">
                   <span className="date">2025 - Presente</span>
