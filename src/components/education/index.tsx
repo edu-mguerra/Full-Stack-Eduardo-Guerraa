@@ -42,29 +42,32 @@ export default function Education() {
         </div>
 
         {/* Experiência Profissional */}
+    {/* Experiência Profissional */}
         <div className="educationSection">
           <h3 className="sectionTitle">💼 Experiência Profissional</h3>
           <div className="educationItems">
             <div className="educationItem">
               <div className="educationIcon">🚀</div>
-              <div className="educationDetails">
+              <div className="educationDetails"> {/* <-- A div começa aqui */}
                 <h3>Desenvolvedor full stack</h3>
                 <p className="institution">GrandValle</p>
                 <div className="educationMeta">
                   <span className="date">2025 - Presente</span>
                   <span className="status experience">Ativo</span>
                 </div>
-               <h4 className="techTitle">Principais tecnologias e ferramentas:</h4>
-              <ul className="techList">
-                <li><strong>Front-end:</strong> React, Next.js, React Native</li>
-                <li><strong>Back-end:</strong> Node.js, Express, APIs</li>
-                <li><strong>Banco de dados:</strong> SQL Server, MongoDB, conexões e integrações</li>
-                <li><strong>ERP:</strong> TOTVS</li>
-                <li><strong>Design e prototipação:</strong> Figma</li>
-                <li><strong>Outros:</strong> Automação de processos e integração de sistemas</li>
-              </ul>
-          
-              </div>
+
+                {/* MOVIDO PARA DENTRO: */}
+                <h4 className="techTitle">Principais tecnologias e ferramentas:</h4>
+                <ul className="techList">
+                  <li><strong>Front-end:</strong> React, Next.js, React Native</li>
+                  <li><strong>Back-end:</strong> Node.js, Express, APIs</li>
+                  <li><strong>Banco de dados:</strong> SQL Server, MongoDB, conexões e integrações</li>
+                  <li><strong>ERP:</strong> TOTVS</li>
+                  <li><strong>Design e prototipação:</strong> Figma</li>
+                  <li><strong>Outros:</strong> Automação de processos e integração de sistemas</li>
+                </ul>
+                
+              </div> 
             </div>
           </div>
         </div>
