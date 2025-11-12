@@ -203,6 +203,38 @@
   margin-top: 20px;
 }
 
+
+.techTitle {
+  margin-top: 16px; 
+  margin-bottom: 8px;
+  font-size: 0.95rem; 
+  color: #333; 
+  font-weight: 600; 
+}
+
+
+.techList {
+  list-style-type: none;
+  padding-left: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Itens individuais da lista (li) */
+.techList li {
+  font-size: 0.9rem; 
+  color: #555; 
+  line-height: 1.4;
+}
+
+.techList li strong {
+  color: #222; 
+  font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .education {
