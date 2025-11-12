@@ -204,16 +204,60 @@
 }
 
 
+/* ESTILOS PARA A LISTA DE TECNOLOGIAS */
+.techSection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .techTitle {
-  margin-top: 16px; 
-  margin-bottom: 8px;
-  font-size: 0.95rem; 
-  color: #333; 
-  font-weight: 600; 
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.techList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.techList li {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.techCategory {
+  font-weight: 600;
+  color: #667eea;
+  display: inline-block;
+  min-width: 120px;
 }
 
 
+.techTitle {
+  
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+}
+
 .techList {
+
   list-style-type: none;
   padding-left: 4px;
   margin-top: 0;
@@ -223,15 +267,16 @@
   gap: 6px;
 }
 
-/* Itens individuais da lista (li) */
 .techList li {
-  font-size: 0.9rem; 
-  color: #555; 
+
+  font-size: 0.9rem;
+  color: #555;
   line-height: 1.4;
 }
 
 .techList li strong {
-  color: #222; 
+  /* Remove estilos antigos */
+  color: #222;
   font-weight: 600;
 }
 
