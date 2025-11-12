@@ -54,10 +54,16 @@ export default function Education() {
                   <span className="date">2025 - Presente</span>
                   <span className="status experience">Ativo</span>
                 </div>
-                <div className="experienceDescription">
-                  <p>Desenvolvimento de soluções full-stack, trabalhando com tecnologias modernas 
-                  e participando ativamente do ciclo completo de desenvolvimento de software.</p>
-                </div>
+               <h4 className="techTitle">Principais tecnologias e ferramentas:</h4>
+  <ul className="techList">
+    <li><strong>Front-end:</strong> React, Next.js, React Native</li>
+    <li><strong>Back-end:</strong> Node.js, Express, APIs</li>
+    <li><strong>Banco de dados:</strong> SQL Server, MongoDB, conexões e integrações</li>
+    <li><strong>ERP:</strong> TOTVS</li>
+    <li><strong>Design e prototipação:</strong> Figma</li>
+    <li><strong>Outros:</strong> Automação de processos e integração de sistemas</li>
+  </ul>
+</div>
               </div>
             </div>
           </div>
