@@ -204,7 +204,7 @@
 }
 
 
-/* ESTILOS PARA A LISTA DE TECNOLOGIAS */
+/* ESTILOS CORRIGIDOS PARA A LISTA DE TECNOLOGIAS */
 .techSection {
   margin-top: 20px;
   padding-top: 20px;
@@ -228,59 +228,89 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .techList li {
   font-size: 0.95rem;
-  color: #e0e0e0;
+  color: #e0e0e0; 
   line-height: 1.5;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.techList li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(102, 126, 234, 0.2);
+  transform: translateX(5px);
 }
 
 .techCategory {
   font-weight: 600;
   color: #667eea;
   display: inline-block;
-  min-width: 120px;
+  min-width: 140px;
 }
 
 
-.techTitle {
+
+@media (max-width: 768px) {
+  .techSection {
+    text-align: center;
+   
+  }
   
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: #333;
-  font-weight: 600;
+  .techList {
+    align-items: center;
+  }
+  
+  .techList li {
+    text-align: center;
+    width: auto;
+    display: inline-block;
+    width: 100%;
+  }
 }
 
-.techList {
-
-  list-style-type: none;
-  padding-left: 4px;
-  margin-top: 0;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+@media (max-width: 480px) {
+  .techSection {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  
+  .techTitle {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .techList li {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+  
+  .techCategory {
+    min-width: 120px;
+    display: block;
+    margin-bottom: 2px;
+  }
 }
 
-.techList li {
-
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
+@media (max-width: 480px) {
+  .techCategory {
+    min-width: 110px;
+    font-size: 0.9rem;
+  }
+  
+  .techList li {
+    font-size: 0.85rem;
+  }
 }
 
-.techList li strong {
-  /* Remove estilos antigos */
-  color: #222;
-  font-weight: 600;
-}
 
-/* Responsive */
+
 @media (max-width: 1200px) {
   .education {
     padding: 70px 35px;

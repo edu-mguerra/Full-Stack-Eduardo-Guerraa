@@ -49,7 +49,7 @@ export default function Education() {
             <div className="educationItem">
               <div className="educationIcon">🚀</div>
               <div className="educationDetails">
-                <h3>Desenvolvedor full stack</h3>
+                <h3>Desenvolvedor Full Stack</h3>
                 <p className="institution">GrandValle</p>
                 <div className="educationMeta">
                   <span className="date">2025 - Presente</span>
@@ -61,8 +61,9 @@ export default function Education() {
                   <h4 className="techTitle">Principais tecnologias e ferramentas:</h4>
                   <ul className="techList">
                     <li><span className="techCategory">Front-end:</span> React, Next.js, React Native</li>
-                    <li><span className="techCategory">Back-end:</span> Node.js, Express, APIs</li>
-                    <li><span className="techCategory">Banco de dados:</span> SQL Server, MongoDB, conexões e integrações</li>
+                    <li><span className="techCategory">Back-end:</span> Node.js, Express, Java, Apache</li>
+                    <li><span className="techCategory">Banco de dados:</span> SQL Server, MySql, PostgreSql, MongoDB</li>
+                    <li><span className="techCategory">Sistemas/DevOps:</span> Linux, Git</li>
                     <li><span className="techCategory">ERP:</span> TOTVS</li>
                     <li><span className="techCategory">Design e prototipação:</span> Figma</li>
                     <li><span className="techCategory">Outros:</span> Automação de processos e integração de sistemas</li>

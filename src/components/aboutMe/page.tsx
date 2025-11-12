@@ -49,7 +49,7 @@ export default function About() {
                     <span className="highlight"> React.js</span>,
                     <span className="highlight"> Next.js</span> e
                     <span className="highlight"> Node.js</span>.
-                    Estou me aprofundando em <span className="highlight">PHP</span>
+                    Estou me aprofundando em <span className="highlight">JAVA</span>
                     para expandir meu conhecimento.
                   </p>
                 </div>

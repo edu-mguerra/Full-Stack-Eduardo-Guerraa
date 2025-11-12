@@ -1,7 +1,7 @@
 import './style.css';
 
 export const Certificatee = () => {
-  const skillCategories = [
+ const skillCategories = [
     {
       title: "Front-End",
       color: "#667eea",
@@ -22,7 +22,8 @@ export const Certificatee = () => {
       color: "#764ba2",
       skills: [
         { name: 'Node.js', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
-        { name: 'PHP', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg' },
+        { name: 'Java', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
+        { name: 'Express', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg' },
         { name: 'Firebase', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg' }
       ]
     },
@@ -31,15 +32,18 @@ export const Certificatee = () => {
       color: "#f093fb",
       skills: [
         { name: 'MySQL', src: 'https://www.svgrepo.com/show/373848/mysql.svg' },
-        { name: 'SQL', src: 'https://www.svgrepo.com/show/331760/sql-database-generic.svg' },
+        { name: 'PostgreSQL', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg' },
+        { name: 'SQL Server', src: 'https://www.svgrepo.com/show/373848/mysql.svg' }, // ou ícone específico do SQL Server
         { name: 'MongoDB', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg' },
         { name: 'SQLite', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' }
       ]
     },
     {
-      title: "Ferramentas",
+      title: "Sistemas & DevOps",
       color: "#4facfe",
       skills: [
+        { name: 'Linux', src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg' },
+        { name: 'Apache', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg' },
         { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
         { name: 'Figma', src: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
         { name: 'WordPress', src: 'https://cdn-icons-png.flaticon.com/512/174/174881.png' }
