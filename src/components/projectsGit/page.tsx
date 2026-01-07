@@ -1,5 +1,15 @@
 import { useGitHubRepos } from "./api";
 import "./style.css";
+import { 
+  FiGithub, 
+  FiStar, 
+  FiCode, 
+  FiExternalLink,
+  FiChevronLeft,
+  FiChevronRight,
+  FiFolder,
+  FiGlobe
+} from "react-icons/fi";
 
 export default function Projects() {
   const { loading, currentProjects, error, nextSlide, prevSlide } = useGitHubRepos();
@@ -31,14 +41,16 @@ export default function Projects() {
 
       <div className="projectsSlider">
         <button onClick={prevSlide} className="nav-btn prev-btn">
-          <span>‹</span>
+          <FiChevronLeft size={24} />
         </button>
 
         <div className="projectsContainer">
           {currentProjects.map((project) => (
             <div key={project.id} className="projectCard">
               <div className="cardHeader">
-                <div className="projectIcon">💻</div>
+                <div className="projectIcon">
+                  <FiFolder size={24} />
+                </div>
                 <h3 className="projectTitle">{formatRepoName(project.name)}</h3>
               </div>
 
@@ -50,18 +62,17 @@ export default function Projects() {
                 </p>
 
                 <div className="projectTech">
-                  <span className="techLabel">Tecnologia:</span>
+                  <span className="techLabel">
+                    <FiCode size={16} />
+                    <span>Tecnologia:</span>
+                  </span>
                   <span className="techValue">{project.language || "Multiplataforma"}</span>
                 </div>
 
                 <div className="projectStats">
                   <div className="stat">
-                    <span className="statIcon">⭐</span>
+                    <FiStar size={16} />
                     <span className="statCount">{project.stargazers_count}</span>
-                  </div>
-                  <div className="stat">
-                    <span className="statIcon">🍴</span>
-                    <span className="statCount">{project.forks_count}</span>
                   </div>
                 </div>
               </div>
@@ -74,7 +85,7 @@ export default function Projects() {
                   className="projectLink"
                 >
                   <span>Ver no GitHub</span>
-                  <span className="linkArrow">→</span>
+                  <FiExternalLink size={16} />
                 </a>
               </div>
             </div>
@@ -82,7 +93,7 @@ export default function Projects() {
         </div>
 
         <button onClick={nextSlide} className="nav-btn next-btn">
-          <span>›</span>
+          <FiChevronRight size={24} />
         </button>
       </div>
 
@@ -94,7 +105,7 @@ export default function Projects() {
           className="allProjectsBtn"
         >
           <span>Ver Todos os Projetos</span>
-          <span className="btnIcon">↗</span>
+          <FiGithub size={20} />
         </a>
       </div>
     </section>

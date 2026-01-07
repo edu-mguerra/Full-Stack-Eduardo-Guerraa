@@ -1,71 +1,555 @@
-.imageContainer {
-  width: 30%;
+/* ImageSwitcher.css */
+.imageSwitcherContainer {
   position: relative;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 10;
+}
+
+.particlesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  transition: transform 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  z-index: 2;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: end;
-
+  justify-content: center;
+  align-items: center;
 }
 
-.imageContainer:hover {
-  transform: scale(1.1);
+/* Efeitos de brilho */
+.glowEffect {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
 }
 
+.glow1 {
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, #667eea, transparent 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+}
 
+.glow2 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #f093fb, transparent 70%);
+  animation: glowPulse 3s ease-in-out infinite reverse;
+  animation-delay: 1s;
+}
+
+.glow3 {
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, #4facfe, transparent 70%);
+  animation: glowPulse 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Anéis orbitais */
+.orbitalRing {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: orbitRotate linear infinite;
+  pointer-events: none;
+}
+
+.ring1 {
+  width: 110%;
+  height: 110%;
+  border-top-color: #667eea;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation-duration: 8s;
+}
+
+.ring2 {
+  width: 120%;
+  height: 120%;
+  border-top-color: transparent;
+  border-right-color: #f093fb;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+.ring3 {
+  width: 130%;
+  height: 130%;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #4facfe;
+  border-left-color: transparent;
+  animation-duration: 12s;
+}
+
+@keyframes orbitRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container da imagem */
+.imageContainer {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 100px rgba(102, 126, 234, 0.2) inset;
+  z-index: 2;
+}
+
+.imageSwitcherContainer:hover .imageContainer {
+  transform: 
+    translateY(-10px) 
+    rotateX(5deg) 
+    rotateY(5deg) 
+    scale(1.05);
+}
+
+/* Transições entre imagens */
+.imageContainer.next .mainImage {
+  animation: slideInNext 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.imageContainer.prev .mainImage {
+  animation: slideInPrev 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.imageContainer.next .previousImage {
+  animation: slideOutNext 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.imageContainer.prev .previousImage {
+  animation: slideOutPrev 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideInNext {
+  0% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInPrev {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideOutNext {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+@keyframes slideOutPrev {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+/* Imagens */
 .image {
-  max-width: 80%;
-  height: auto;
-  border-radius: 70%;
-  border: 1px solid whitesmoke;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: start;
-  justify-self: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
   user-select: none;
   -webkit-user-drag: none;
-
+  pointer-events: none;
 }
 
-.image:nth-child(1) {
-  opacity: 1;
+.mainImage {
+  z-index: 3;
 }
 
-.image.active {
-  opacity: 1;
+.previousImage {
+  z-index: 2;
+  filter: grayscale(0.3) blur(2px);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(240, 147, 251, 0.1),
+    rgba(79, 172, 254, 0.1)
+  );
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: overlay;
+}
+
+/* Ícones flutuantes */
+.floatingIcons {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 5;
+}
+
+.floatingIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  animation: float 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floatingIcon:hover {
+  background: rgba(102, 126, 234, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.icon1 {
+  animation-delay: 0s;
+}
+
+.icon2 {
+  animation-delay: 1s;
+}
+
+.icon3 {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Controles */
+.imageControls {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 5;
+}
+
+.controlButton {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.controlButton:hover {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.imageIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.indicatorContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.indicatorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicatorDot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.3);
+}
+
+.indicatorDot.active {
+  background: #667eea;
+  box-shadow: 0 0 10px #667eea;
+  transform: scale(1.3);
+}
+
+.imageCounter {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* Badge de status */
+.statusBadge {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  animation: badgeFloat 2s ease-in-out infinite;
+}
+
+.statusIcon {
+  color: #43e97b;
+  animation: spin 4s linear infinite;
+}
+
+.statusPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #43e97b;
+  box-shadow: 0 0 10px #43e97b;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .imageSwitcherContainer {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .imageWrapper {
+    width: 280px;
+    height: 380px;
+  }
+  
+  .imageContainer {
+    width: 260px;
+    height: 360px;
+  }
 }
 
 @media (max-width: 768px) {
-
-  .image {
-    width: 100%;
+  .imageSwitcherContainer {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  
+  .imageWrapper {
+    width: 250px;
+    height: 350px;
+  }
+  
+  .imageContainer {
+    width: 230px;
+    height: 330px;
+  }
+  
+  .floatingIcons {
+    top: -15px;
+  }
+  
+  .floatingIcon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .imageControls {
+    bottom: -50px;
   }
 }
 
-@media (max-width: 450px) {
-
-
+@media (max-width: 480px) {
+  .imageSwitcherContainer {
+    width: 280px;
+    height: 380px;
+  }
+  
+  .imageWrapper {
+    width: 230px;
+    height: 320px;
+  }
+  
   .imageContainer {
-    width: 100%;
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: end;
+    width: 210px;
+    height: 300px;
   }
-
-  .image {
-    width: 80%;
+  
+  .glowEffect,
+  .orbitalRing {
+    display: none;
   }
-
-
+  
+  .statusBadge {
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
 
-
-
-@media (max-width: 321px) {
-
-  .imageContainer {
-    flex: 1;
+@media (max-width: 320px) {
+  .imageSwitcherContainer {
+    width: 250px;
+    height: 350px;
   }
-
+  
+  .imageWrapper {
+    width: 210px;
+    height: 290px;
+  }
+  
+  .imageContainer {
+    width: 190px;
+    height: 270px;
+  }
+  
+  .floatingIcons {
+    display: none;
+  }
 }
