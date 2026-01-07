@@ -1,4 +1,3 @@
-/* ImageSwitcher.css */
 .imageSwitcherContainer {
   position: relative;
   width: 400px;
@@ -36,7 +35,6 @@
   align-items: center;
 }
 
-/* Efeitos de brilho */
 .glowEffect {
   position: absolute;
   border-radius: 50%;
@@ -80,7 +78,6 @@
   }
 }
 
-/* Anéis orbitais */
 .orbitalRing {
   position: absolute;
   border: 2px solid transparent;
@@ -129,7 +126,6 @@
   }
 }
 
-/* Container da imagem */
 .imageContainer {
   position: relative;
   width: 280px;
@@ -153,7 +149,6 @@
     scale(1.05);
 }
 
-/* Transições entre imagens */
 .imageContainer.next .mainImage {
   animation: slideInNext 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -222,7 +217,6 @@
   }
 }
 
-/* Imagens */
 .image {
   position: absolute;
   top: 0;
@@ -263,7 +257,6 @@
   mix-blend-mode: overlay;
 }
 
-/* Ícones flutuantes */
 .floatingIcons {
   position: absolute;
   top: -20px;
@@ -318,7 +311,6 @@
   }
 }
 
-/* Controles */
 .imageControls {
   position: absolute;
   bottom: -60px;
@@ -393,7 +385,6 @@
   letter-spacing: 1px;
 }
 
-/* Badge de status */
 .statusBadge {
   position: absolute;
   top: -50px;
@@ -455,7 +446,6 @@
   }
 }
 
-/* Responsividade */
 @media (max-width: 1200px) {
   .imageSwitcherContainer {
     width: 350px;

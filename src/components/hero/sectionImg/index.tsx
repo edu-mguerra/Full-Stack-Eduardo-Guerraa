@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './ImageSwitcher.css'; // Arquivo CSS para estilo
+import './ImageSwitcher.css'; 
 import { FiCamera, FiRefreshCw, FiZap, FiHexagon } from 'react-icons/fi';
 
 const ImageSwitcher = () => {
@@ -13,7 +13,6 @@ const ImageSwitcher = () => {
     '/images/img2.jpeg',
   ];
 
-  // Efeito de partículas 3D
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -98,7 +97,6 @@ const ImageSwitcher = () => {
         ctx.globalAlpha = particle.alpha;
         ctx.fill();
         
-        // Brilho
         ctx.beginPath();
         for (let i = 0; i < 6; i++) {
           const angle = (i * Math.PI) / 3;
@@ -202,7 +200,6 @@ const ImageSwitcher = () => {
         
        
         
-        {/* Controles */}
         <div className="imageControls">
           <button 
             className="controlButton prevButton"

@@ -104,7 +104,6 @@ export const Hero = () => {
         });
       });
 
-      // Draw floating tech icons
       const icons = [
         { icon: '{}', x: canvas.width * 0.2, y: canvas.height * 0.3 },
         { icon: '<>', x: canvas.width * 0.8, y: canvas.height * 0.4 },
