@@ -36,9 +36,9 @@ const educationData = [
 
 const techStack = [
   { category: "Front-end", icon: <FiLayout size={18} />, items: ["React", "Next.js", "React Native", "TypeScript", "Tailwind"] },
-  { category: "Back-end", icon: <FiServer size={18} />, items: ["Node.js", "Express", "Java", "NestJS"] },
+  { category: "Back-end", icon: <FiServer size={18} />, items: ["Node.js", "Express", "Java", "Spring Boot"] },
   { category: "Banco de Dados", icon: <FiDatabase size={18} />, items: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"] },
-  { category: "DevOps/Infra", icon: <FiGitBranch size={18} />, items: ["Linux", "Git", "Docker", "AWS Basic"] },
+  { category: "DevOps/Infra", icon: <FiGitBranch size={18} />, items: ["Linux", "Git", "Docker"] },
   { category: "Design", icon: <FiPenTool size={18} />, items: ["Figma", "UI/UX", "Prototipagem"] },
   { category: "Outros", icon: <FiMonitor size={18} />, items: ["Clean Code", "SOLID", "Scrum"] },
 ];

@@ -2,10 +2,8 @@
 
 .montserrat-custom {
   font-family: "Montserrat", sans-serif;
-  /* Ajustei para sans-serif no fallback */
   font-optical-sizing: auto;
   font-weight: 400;
-  /* Ajuste o peso conforme necessário */
   font-style: normal;
 }
 

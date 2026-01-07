@@ -513,7 +513,8 @@
   
   .glowEffect,
   .orbitalRing {
-    display: none;
+    display: block;
+    width: 70%;
   }
   
   .statusBadge {

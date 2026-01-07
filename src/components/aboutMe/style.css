@@ -489,8 +489,11 @@
   }
   
   .nameBadge {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
+  }
+  .nameContainer H3{
+    font-size: 180%;
   }
   
   .timelineItem {

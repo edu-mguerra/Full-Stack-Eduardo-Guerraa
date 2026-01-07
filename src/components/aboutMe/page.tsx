@@ -33,10 +33,7 @@ export default function About() {
               </div>
               <div className="statusIndicator active"></div>
             </div>
-            <p className="subtitle">
-              <FiCode className="subtitleIcon" />
-              Desenvolvedor Full Stack
-            </p>
+           
           </div>
 
           <div className="timeline">

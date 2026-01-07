@@ -236,11 +236,7 @@ const ImageSwitcher = () => {
           </button>
         </div>
         
-        <div className="statusBadge">
-          <FiRefreshCw className="statusIcon" />
-          <span>Auto-switch</span>
-          <div className="statusPulse"></div>
-        </div>
+        
       </div>
     </div>
   );
