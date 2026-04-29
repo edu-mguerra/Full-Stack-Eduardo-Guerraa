@@ -1,9 +1,9 @@
 .projects {
-  background: "#00000";
+  background: #000;
   color: #f0f0f0;
   padding: 4rem 2rem;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 .projectsLoading, .projectsError {
@@ -18,19 +18,17 @@
 .loadingSpinner {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255,255,255,0.1);
   border-top-color: #646cff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .projectsHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .titleProject {
@@ -53,53 +51,72 @@
 .projectsSubtitle {
   color: #a0a0a0;
   font-size: 1.1rem;
-  margin-top: 0.5rem;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.techSelect {
+  background: #c0c0c0;
+  border: 1px solid rgba(100,108,255,0.4);
+  color: rgba(100,108,255,0.9) ;
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+
+.techSelect:hover {
+  border-color: #646cff;
+  background: rgba(100,108,255,0.1);
 }
 
 .projectsSlider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-.nav-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f0f0f0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-  background: rgba(100, 108, 255, 0.2);
-  border-color: #646cff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.3);
+  position: relative;
 }
 
 .projectsContainer {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem 2rem;
+  scroll-behavior: smooth;
+}
+
+.projectsContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projectsContainer::-webkit-scrollbar-track {
+  background: #1e1e2f;
+  border-radius: 10px;
+}
+
+.projectsContainer::-webkit-scrollbar-thumb {
+  background: #646cff;
+  border-radius: 10px;
+}
+
+.projectsContainer::-webkit-scrollbar-thumb:hover {
+  background: #7a80ff;
 }
 
 .projectCard {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  flex: 0 0 calc(33.333% - 1.4rem);
+  min-width: 280px;
+  scroll-snap-align: start;
+  background: rgba(30,30,30,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
   padding: 2rem;
-  width: 350px;
-  min-height: 320px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
@@ -108,8 +125,8 @@
 
 .projectCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(100, 108, 255, 0.5);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(100,108,255,0.5);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 .cardHeader {
@@ -121,19 +138,16 @@
 
 .projectIcon {
   color: #646cff;
-  background: rgba(100, 108, 255, 0.1);
+  background: rgba(100,108,255,0.1);
   padding: 0.75rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 14px;
 }
 
 .projectTitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #f0f0f0;
   margin: 0;
+  line-height: 1.3;
 }
 
 .cardContent {
@@ -145,9 +159,8 @@
 
 .projectDescription {
   color: #b0b0b0;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin: 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .projectTech {
@@ -162,14 +175,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #888;
 }
 
 .techValue {
   color: #646cff;
   font-weight: 500;
   padding: 0.25rem 0.75rem;
-  background: rgba(100, 108, 255, 0.1);
+  background: rgba(100,108,255,0.1);
   border-radius: 20px;
   font-size: 0.85rem;
 }
@@ -177,7 +189,6 @@
 .projectStats {
   display: flex;
   gap: 1.5rem;
-  margin-top: auto;
 }
 
 .stat {
@@ -185,22 +196,16 @@
   align-items: center;
   gap: 0.5rem;
   color: #888;
-  font-size: 0.9rem;
 }
 
-.stat svg {
-  color: #ffd700;
-}
+.stat svg { color: #ffd700; }
 
-.statCount {
-  color: #f0f0f0;
-  font-weight: 500;
-}
+.statCount { color: #f0f0f0; font-weight: 500; }
 
 .cardActions {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .projectLink {
@@ -211,14 +216,13 @@
   color: #646cff;
   font-weight: 500;
   padding: 0.75rem 1.5rem;
-  background: rgba(100, 108, 255, 0.1);
-  border-radius: 12px;
+  background: rgba(100,108,255,0.1);
+  border-radius: 60px;
   transition: all 0.3s ease;
 }
 
 .projectLink:hover {
-  background: rgba(100, 108, 255, 0.2);
-  color: #7a80ff;
+  background: rgba(100,108,255,0.2);
   transform: translateX(4px);
 }
 
@@ -229,54 +233,49 @@
 }
 
 .allProjectsBtn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
   color: #f0f0f0;
-  font-weight: 500;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 60px;
   transition: all 0.3s ease;
 }
 
 .allProjectsBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(100, 108, 255, 0.5);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(100,108,255,0.5);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.allProjectsBtn svg {
-  transition: transform 0.3s ease;
-}
-
-.allProjectsBtn:hover svg {
-  transform: translateX(4px);
-}
-
-@media (max-width: 768px) {
-  .projects {
-    padding: 2rem 1rem;
-  }
-  
-  .titleProject {
-    font-size: 2.25rem;
-  }
-  
-  .projectsSlider {
-    gap: 1rem;
-  }
-  
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-  }
-  
+@media (max-width: 900px) {
   .projectCard {
-    width: 100%;
-    max-width: 400px;
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .projects { padding: 2rem 1rem; }
+  .titleProject { font-size: 2.25rem; }
+  .projectCard {
+    flex: 0 0 85%;
+    min-width: 260px;
+  }
+  .projectsContainer {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectCard {
+    flex: 0 0 90%;
+  }
+  .techSelect {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }

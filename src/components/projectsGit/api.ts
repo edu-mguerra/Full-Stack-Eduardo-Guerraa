@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-// Tipagem para os dados dos repositórios no GitHub
 type GitHubRepo = {
   id: number;
   name: string;
@@ -12,12 +11,9 @@ type GitHubRepo = {
   created_at: string;
   updated_at: string;
   topics?: string[];
-  license?: {
-    name: string;
-  } | null;
+  license?: { name: string } | null;
 };
 
-// Hook customizado para buscar os repositórios do GitHub
 export const useGitHubRepos = () => {
   const [projects, setProjects] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -40,17 +36,13 @@ export const useGitHubRepos = () => {
         setLoading(false);
       }
     };
-
     fetchProjects();
   }, []);
-
-
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(projects.length / projectsPerSlide));
   };
 
-  // Voltar para o slide anterior
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? Math.ceil(projects.length / projectsPerSlide) - 1 : prevIndex - 1

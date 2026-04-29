@@ -1,3 +1,4 @@
+//@ts-ignore
 import "./style.css";
 import {
   FiCode,
@@ -28,7 +29,7 @@ export const Certificatee = () => {
         },
         {
           name: "Tailwind",
-          src: "https://alunos.b7web.com.br/media/courses/logo/tailwindcss.jpg",
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png",
         },
         {
           name: "JavaScript",
@@ -75,10 +76,7 @@ export const Certificatee = () => {
           name: "Spring Boot",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg",
         },
-        {
-          name: "Firebase",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
-        },
+        
       ],
     },
     {

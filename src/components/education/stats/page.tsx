@@ -8,6 +8,7 @@ import {
   FiZap,
   FiCode,
   FiCpu,
+  FiSmartphone,
 } from "react-icons/fi";
 
 export const Stats = () => {
@@ -25,6 +26,13 @@ export const Stats = () => {
       description:
         "Criação de interfaces modernas, responsivas e performáticas utilizando React. Componentização reutilizável, integração com APIs, gerenciamento de estado, animações e estilização com Tailwind CSS, seguindo boas práticas de UX e SEO.",
       color: "#764ba2",
+    },
+    {
+      title: "Mobile",
+      icon: <FiSmartphone size={28} />,
+      description:
+        "Desenvolvimento de aplicativos móveis multiplataforma com React Native. Criação de interfaces nativas performáticas, integração com APIs, uso de recursos do dispositivo, gerenciamento de estado e publicação em lojas (Google Play e App Store).",
+      color: "#38bdf8",
     },
     {
       title: "UI/UX Design",
