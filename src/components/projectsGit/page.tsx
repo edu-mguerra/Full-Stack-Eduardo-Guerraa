@@ -16,8 +16,8 @@ export default function Projects() {
   if (loading) return <div className="projectsLoading"><div className="loadingSpinner"></div><p>Carregando projetos...</p></div>;
   if (error) return <div className="projectsError"><p>Erro: {error}</p></div>;
 
-  const allLanguages = [...new Set(projects.map(repo => repo.language).filter(Boolean))];
-  const filteredLanguages = allLanguages.filter(lang => lang !== "HTML" && lang !== "CSS");
+  const allLanguages = [...new Set(projects.map(repo => repo.language).filter((lang): lang is string => Boolean(lang)))];
+  const filteredLanguages = allLanguages.filter((lang) => lang !== "HTML" && lang !== "CSS");
   const filteredRepos = filterLang === "all" 
     ? projects 
     : projects.filter(repo => repo.language === filterLang);
