@@ -1,4 +1,4 @@
-//@ts-ignore
+import React from "react";
 import "./style.css";
 import {
   FiCode,
@@ -12,8 +12,23 @@ import {
   FiMonitor,
 } from "react-icons/fi";
 
+interface Skill {
+  id?: string; 
+  name: string;
+  src: string;
+  style?: React.CSSProperties;
+}
+
+interface Category {
+  id?: string;
+  title: string;
+  color: string;
+  icon: React.ReactNode;
+  skills: Skill[];
+}
+
 export const Certificatee = () => {
-  const skillCategories = [
+  const skillCategories: Category[] = [
     {
       title: "Front-End",
       color: "#667eea",
@@ -32,7 +47,6 @@ export const Certificatee = () => {
           src: "https://www.svgrepo.com/show/368858/nextjs.svg",
           style: { background: "#fff", borderRadius: "100%", padding: "2px" },
         },
-       
         {
           name: "Tailwind",
           src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png",
@@ -45,7 +59,6 @@ export const Certificatee = () => {
           name: "TypeScript",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
         },
-        
         { name: "Vue.js", src: "https://br.vuejs.org/images/logo.svg" },
       ],
     },
@@ -65,7 +78,6 @@ export const Certificatee = () => {
           name: "Express.js",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
         },
-
         {
           id: "csharp",
           name: "C#",
@@ -189,7 +201,7 @@ export const Certificatee = () => {
                       alt={skill.name}
                       src={skill.src}
                       className="skillIcon"
-                      style={skill.style}
+                      style={skill.style} 
                       loading="lazy"
                     />
                     <div className="skillOverlay">
