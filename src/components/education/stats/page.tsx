@@ -44,8 +44,8 @@ export const Stats = () => {
     {
       title: "Back-end",
       icon: <FiServer size={28} />,
-      description:
-        "Desenvolvimento de APIs RESTful com Node.js/Express e Java/Spring, incluindo autenticação JWT, middleware de validação, implementação de regras de negócio, controle de permissões e integrações externas. Arquitetura orientada à segurança, escalabilidade e fácil manutenção.",
+      description:"Desenvolvimento de APIs RESTful com Node.js/Express e C#/.NET, incluindo autenticação JWT, criação de middlewares, validação de dados, implementação de regras de negócio e controle de permissões. Experiência com integração de serviços externos e construção de aplicações seguras, escaláveis e de fácil manutenção.",
+
       color: "#4facfe",
     },
     {

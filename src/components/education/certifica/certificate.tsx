@@ -20,26 +20,6 @@ export const Certificatee = () => {
       icon: <FiCode size={24} />,
       skills: [
         {
-          name: "HTML",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
-        },
-        {
-          name: "CSS",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
-        },
-        {
-          name: "Tailwind",
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png",
-        },
-        {
-          name: "JavaScript",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-        },
-        {
-          name: "TypeScript",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-        },
-        {
           name: "React",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
         },
@@ -52,31 +32,60 @@ export const Certificatee = () => {
           src: "https://www.svgrepo.com/show/368858/nextjs.svg",
           style: { background: "#fff", borderRadius: "100%", padding: "2px" },
         },
+       
+        {
+          name: "Tailwind",
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png",
+        },
+        {
+          name: "JavaScript",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+        },
+        {
+          name: "TypeScript",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+        },
+        
         { name: "Vue.js", src: "https://br.vuejs.org/images/logo.svg" },
       ],
     },
     {
+      id: "backend",
       title: "Back-End",
       color: "#764ba2",
       icon: <FiServer size={24} />,
       skills: [
         {
+          id: "nodejs",
           name: "Node.js",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
         },
         {
-          name: "Express",
+          id: "express",
+          name: "Express.js",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
         },
+
         {
+          id: "csharp",
+          name: "C#",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg",
+        },
+        {
+          id: "dotnet",
+          name: ".NET",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg",
+        },
+        {
+          id: "java",
           name: "Java",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
         },
         {
+          id: "spring",
           name: "Spring Boot",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg",
         },
-        
       ],
     },
     {

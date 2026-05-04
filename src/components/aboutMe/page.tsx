@@ -33,7 +33,6 @@ export default function About() {
               </div>
               <div className="statusIndicator active"></div>
             </div>
-           
           </div>
 
           <div className="timeline">
@@ -81,20 +80,20 @@ export default function About() {
                     <h4>Stack Tecnológica</h4>
                   </div>
                   <p>
-                    Atualmente atuo como desenvolvedor full-stack, trabalhando com
+                    Atualmente atuo como desenvolvedor full-stack, com sólida experiência em 
                     <span className="highlight"> TypeScript</span>,
                     <span className="highlight"> React.js</span>,
                     <span className="highlight"> Next.js</span> e
                     <span className="highlight"> Node.js</span>.
-                    Estou me aprofundando em <span className="highlight">JAVA</span>
-                    para expandir meu conhecimento.
+                    Também domino o desenvolvimento com <span className="highlight">C#</span> e o ecossistema <span className="highlight">.NET</span> para a construção de APIs robustas e escaláveis.
                   </p>
                   <div className="techStack">
                     <span className="techItem">TypeScript</span>
                     <span className="techItem">React</span>
                     <span className="techItem">Next.js</span>
                     <span className="techItem">Node.js</span>
-                    <span className="techItem">JAVA</span>
+                    <span className="techItem">C#</span>
+                    <span className="techItem">.NET</span>
                   </div>
                 </div>
               </div>
@@ -117,14 +116,14 @@ export default function About() {
                     <h4>Foco e Aprendizado</h4>
                   </div>
                   <p>
-                    Meu foco é continuar aprendendo e aprimorando minhas habilidades,
+                    Meu foco é continuar aprimorando minhas habilidades na arquitetura de sistemas,
                     tanto no front-end quanto no back-end. Tenho grande interesse em
                     como as partes do sistema se conectam para uma experiência completa.
                   </p>
                   <div className="focusAreas">
                     <div className="focusItem">
                       <div className="focusDot"></div>
-                      <span>Aprendizado Contínuo</span>
+                      <span>Arquitetura de Software</span>
                     </div>
                     <div className="focusItem">
                       <div className="focusDot"></div>
