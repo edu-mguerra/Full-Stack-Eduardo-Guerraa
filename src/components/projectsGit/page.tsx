@@ -5,18 +5,25 @@ import {
   FiGithub,
   FiStar,
   FiCode,
-  FiExternalLink,
   FiFolder,
   FiChevronLeft,
   FiChevronRight,
   FiChevronDown,
 } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+
+
+const FEATURED_REPO_NAMES = [
+  "fazenda-clima",
+  "LaserControl-High-Availability-Production-System",
+  "gerenciador-rede-dotnet",
+];
 
 export default function Projects() {
   const { loading, projects, error } = useGitHubRepos();
   const [filterLang, setFilterLang] = useState<string>("all");
   const [isSelectOpen, setIsSelectOpen] = useState(false);
-  
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -33,20 +40,24 @@ export default function Projects() {
   if (loading) return <div className="projectsLoading"><div className="loadingSpinner"></div><p>Carregando projetos...</p></div>;
   if (error) return <div className="projectsError"><p>Erro: {error}</p></div>;
 
-  const allLanguages = [...new Set(projects.map(repo => repo.language).filter((lang): lang is string => Boolean(lang)))];
+  const curatedProjects = projects.filter(
+    (repo) => !repo.fork && !FEATURED_REPO_NAMES.includes(repo.name)
+  );
+
+  const allLanguages = [...new Set(curatedProjects.map(repo => repo.language).filter((lang): lang is string => Boolean(lang)))];
   const filteredLanguages = allLanguages.filter((lang) => lang !== "HTML" && lang !== "CSS");
-  
-  const filteredRepos = filterLang === "all" 
-    ? projects 
-    : projects.filter(repo => repo.language === filterLang);
+
+  const filteredRepos = filterLang === "all"
+    ? curatedProjects
+    : curatedProjects.filter(repo => repo.language === filterLang);
 
   const formatRepoName = (name: string) => name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
 
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
-      const scrollTo = direction === "left" 
-        ? scrollLeft - clientWidth * 0.7 
+      const scrollTo = direction === "left"
+        ? scrollLeft - clientWidth * 0.7
         : scrollLeft + clientWidth * 0.7;
 
       sliderRef.current.scrollTo({
@@ -59,16 +70,17 @@ export default function Projects() {
   return (
     <section className="projects">
       <div className="projectsHeader">
-        <h1 className="titleProject">Meus Projetos</h1>
+        <h2 className="titleProject">Outros Repositórios</h2>
         <div className="headerDivider"></div>
-        <p className="projectsSubtitle">Confira alguns dos meus trabalhos no GitHub</p>
+        <p className="projectsSubtitle">
+          Experimentos e outros trabalhos disponíveis no GitHub
+        </p>
       </div>
 
-      {/* Filtro Customizado */}
       <div className="filterBar">
         <div className="customSelect" ref={dropdownRef}>
-          <div 
-            className={`selectHeader ${isSelectOpen ? "open" : ""}`} 
+          <div
+            className={`selectHeader ${isSelectOpen ? "open" : ""}`}
             onClick={() => setIsSelectOpen(!isSelectOpen)}
           >
             <span>{filterLang === "all" ? "Todos os projetos" : filterLang}</span>
@@ -77,14 +89,14 @@ export default function Projects() {
 
           {isSelectOpen && (
             <ul className="selectOptions">
-              <li 
+              <li
                 className={filterLang === "all" ? "activeOption" : ""}
                 onClick={() => { setFilterLang("all"); setIsSelectOpen(false); }}
               >
                 Todos os projetos
               </li>
               {filteredLanguages.map(lang => (
-                <li 
+                <li
                   key={lang}
                   className={filterLang === lang ? "activeOption" : ""}
                   onClick={() => { setFilterLang(lang); setIsSelectOpen(false); }}
@@ -97,7 +109,6 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Slider de Projetos */}
       <div className="projectsSliderWrapper">
         <button className="sliderBtn left" onClick={() => scroll("left")} aria-label="Anterior">
           <FiChevronLeft size={24} />
@@ -115,7 +126,6 @@ export default function Projects() {
                   {project.description?.substring(0, 100) || "Projeto em desenvolvimento."}
                 </p>
                 <div className="projectTech">
-                  <span className="techLabel"><FiCode size={16} /><span>Tecnologia:</span></span>
                   <span className="techValue">{project.language || "Multiplataforma"}</span>
                 </div>
                 <div className="projectStats">
@@ -124,7 +134,7 @@ export default function Projects() {
               </div>
               <div className="cardActions">
                 <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="projectLink">
-                  <span>Ver no GitHub</span><FiExternalLink size={16} />
+                  <FaGithub size={20} />
                 </a>
               </div>
             </div>

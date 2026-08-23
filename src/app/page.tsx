@@ -1,5 +1,5 @@
 "use client"
-import About from "@/components/aboutMe/page";
+import About from "@/components/projectsDestaque/page";
 import "./globals.css";
 import Education from "@/components/education";
 import { Hero } from "@/components/hero/page";
@@ -16,8 +16,8 @@ export default function Home() {
 
       <Hero />
       <Education />
-      <Projects />
       <About />
+      <Projects />
       <Contact />
       <Footer />
     </>

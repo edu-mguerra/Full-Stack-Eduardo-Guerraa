@@ -12,6 +12,7 @@ type GitHubRepo = {
   updated_at: string;
   topics?: string[];
   license?: { name: string } | null;
+  fork: boolean;
 };
 
 export const useGitHubRepos = () => {

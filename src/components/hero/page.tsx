@@ -1,7 +1,7 @@
 import './style.css';
 import ImageSwitcher from './sectionImg';
 import { useEffect, useRef, useState } from 'react';
-import { FiDownload, FiMessageSquare, FiCode, FiCpu, FiZap, FiChevronRight } from 'react-icons/fi';
+import { FiDownload, FiMessageSquare, FiCode, FiCpu, FiZap, FiChevronRight, FiChevronDown } from 'react-icons/fi';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -14,6 +14,19 @@ export const Hero = () => {
     radius: number;
     color: string;
   }>>([]);
+
+  const [isCvOpen, setIsCvOpen] = useState(false);
+  const cvDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (cvDropdownRef.current && !cvDropdownRef.current.contains(event.target as Node)) {
+        setIsCvOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -33,7 +46,7 @@ export const Hero = () => {
     // Create particles
     const newParticles = [];
     const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe'];
-    
+
     for (let i = 0; i < 100; i++) {
       newParticles.push({
         x: Math.random() * canvas.width,
@@ -50,7 +63,7 @@ export const Hero = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Draw gradient background
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       gradient.addColorStop(0, 'rgba(10, 10, 10, 0.95)');
@@ -72,7 +85,7 @@ export const Hero = () => {
         const dx = mousePosition.x - particle.x;
         const dy = mousePosition.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < 100) {
           const force = (100 - distance) / 100;
           particle.vx += dx * 0.0005 * force;
@@ -88,11 +101,11 @@ export const Hero = () => {
         // Draw connections
         particles.forEach((otherParticle, j) => {
           if (i >= j) return;
-          
+
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (distance < 150) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
@@ -135,19 +148,19 @@ export const Hero = () => {
   return (
     <div className='section' onMouseMove={handleMouseMove}>
       <canvas ref={canvasRef} className='canvasBackground' />
-      
+
       <div className='contentWrapper'>
         <ImageSwitcher />
-        
+
         <div className='textContainer'>
           <div className='divText'>
             <div className='titleWrapper'>
               <h2 className='title'>
-                <span className='titlePart'>Eduardo</span>
-                <span className='titleAccent'> Guerra</span>
+                <span className='titlePart'>Eduardo  <span className='titleAccent'> Guerra</span></span>
+
               </h2>
             </div>
-            
+
             <div className='techBadges'>
               <span className='techBadge'><FiCode /> Front-end</span>
               <span className='techBadge'><FiCpu /> Back-end</span>
@@ -167,16 +180,44 @@ export const Hero = () => {
             </p>
 
             <div className="buttonContainer">
-              <div className="buttonWrapper">
-                <a
-                  href="/cv/curriculoDEV.pdf"
-                  download="Curriculo Eduardo Guerra"
+              <div className="buttonWrapper cvDropdownWrapper" ref={cvDropdownRef}>
+                <button
+                  type="button"
                   className="buttonH downloadBtn"
+                  onClick={() => setIsCvOpen((prev) => !prev)}
+                  aria-haspopup="true"
+                  aria-expanded={isCvOpen}
                 >
                   <FiDownload className="btnIcon" />
                   <span className="btnText">Download CV</span>
+                  <FiChevronDown className={`btnChevron ${isCvOpen ? 'rotate' : ''}`} />
                   <div className="btnGlow"></div>
-                </a>
+                </button>
+
+                {isCvOpen && (
+                  <div className="cvDropdownMenu" role="menu">
+                    <a
+                      href="/cv/curriculo dotNET.pdf"
+                      download="Eduardo Guerra - CV dotNET"
+                      className="cvDropdownItem"
+                      role="menuitem"
+                      onClick={() => setIsCvOpen(false)}
+                    >
+                      <span className="cvDropdownLabel">.NET / C#</span>
+                      <span className="cvDropdownSub">Ambiente .NET / C#</span>
+                    </a>
+                    <a
+                      href="/cv/curriculo DEV JS.pdf"
+                      download="Eduardo Guerra - CV Node-React"
+                      className="cvDropdownItem"
+                      role="menuitem"
+                      onClick={() => setIsCvOpen(false)}
+                    >
+                      <span className="cvDropdownLabel">Node.js / React</span>
+                      <span className="cvDropdownSub">Ambiente JavaScript</span>
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className="buttonWrapper">

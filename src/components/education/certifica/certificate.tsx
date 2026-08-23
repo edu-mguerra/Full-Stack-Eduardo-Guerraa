@@ -59,7 +59,10 @@ export const Certificatee = () => {
           name: "TypeScript",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
         },
-        { name: "Vue.js", src: "https://br.vuejs.org/images/logo.svg" },
+         {
+          name: "Figma",
+          src: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
+        }
       ],
     },
     {
@@ -87,16 +90,6 @@ export const Certificatee = () => {
           id: "dotnet",
           name: ".NET",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg",
-        },
-        {
-          id: "java",
-          name: "Java",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-        },
-        {
-          id: "spring",
-          name: "Spring Boot",
-          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg",
         },
       ],
     },
@@ -130,6 +123,14 @@ export const Certificatee = () => {
       icon: <FiCpu size={24} />,
       skills: [
         {
+          name: "Docker",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
+        },
+        {
+          name: "AWS",
+          src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        },
+        {
           name: "Linux",
           src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg",
         },
@@ -141,10 +142,7 @@ export const Certificatee = () => {
           name: "Git",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
         },
-        {
-          name: "Figma",
-          src: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
-        },
+       
         {
           name: "WordPress",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
@@ -205,7 +203,7 @@ export const Certificatee = () => {
                       loading="lazy"
                     />
                     <div className="skillOverlay">
-                      <span>+</span>
+                      
                     </div>
                   </div>
                   <span className="skillName">{skill.name}</span>

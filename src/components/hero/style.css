@@ -305,9 +305,77 @@
   border-radius: 1px;
 }
 
+/* ===== Dropdown de seleção de CV ===== */
 
+.btnChevron {
+  transition: transform 0.3s ease;
+}
 
+.btnChevron.rotate {
+  transform: rotate(180deg);
+}
 
+.cvDropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  min-width: 220px;
+  z-index: 20;
+
+  background: rgba(20, 20, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.5rem;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  animation: cvDropdownFadeIn 0.2s ease;
+}
+
+@keyframes cvDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cvDropdownItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+
+  text-decoration: none;
+  color: #f0f0f0;
+
+  transition: background 0.2s ease;
+}
+
+.cvDropdownItem:hover {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+.cvDropdownLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.cvDropdownSub {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}
 
 @media (max-width: 1200px) {
   .contentWrapper {
@@ -417,6 +485,13 @@
   
   .buttonH {
     width: 100%;
+  }
+
+  .cvDropdownMenu {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 280px;
   }
   
   .techBadges {
