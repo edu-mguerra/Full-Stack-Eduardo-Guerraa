@@ -1,34 +1,9 @@
+import React from "react";
 import "./footer.css";
+import { contacts } from "@/data/contacts";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/eduardo-guerra-mh/",
-      icon: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-      color: "#0077B5"
-    },
-    {
-      name: "WhatsApp",
-      url: "https://wa.me/5587992020340",
-      icon: "https://cdn-icons-png.flaticon.com/512/733/733585.png",
-      color: "#25D366"
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/eduardo.mguerra/",
-      icon: "https://cdn-icons-png.flaticon.com/512/174/174855.png",
-      color: "#E4405F"
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/edu-mguerra",
-      icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
-      color: "#6e5494"
-    }
-  ];
 
   return (
     <footer className="footer">
@@ -46,7 +21,7 @@ export default function Footer() {
           <div className="footerSocial">
             <h4>Conecte-se comigo</h4>
             <div className="socialGrid">
-              {socialLinks.map((social) => (
+              {contacts.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -70,7 +45,6 @@ export default function Footer() {
           <div className="footerDividerLarge"></div>
           <div className="copyright">
             <p>© {currentYear} Eduardo Guerra. Todos os direitos reservados.</p>
-           
           </div>
         </div>
       </div>

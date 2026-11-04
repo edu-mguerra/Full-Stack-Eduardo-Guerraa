@@ -1,7 +1,7 @@
 .imageSwitcherContainer {
   position: relative;
-  width: 400px;
-  height: 500px;
+  width: 360px;
+  height: 460px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +21,8 @@
 
 .imageWrapper {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 270px;
+  height: 360px;
   z-index: 2;
 }
 

@@ -1,25 +1,20 @@
-"use client"
-import About from "@/components/projectsDestaque/page";
 import "./globals.css";
+import Hero from "@/components/hero";
 import Education from "@/components/education";
-import { Hero } from "@/components/hero/page";
-import Projects from "@/components/projectsGit/page";
-import Contact from "@/components/contact/page";
-import Footer from "@/components/footer/page";
-
-
-
+import FeaturedProjects from "@/components/projectsDestaque";
+import Projects from "@/components/projectsGit";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
-
+    <main>
       <Hero />
       <Education />
-      <About />
+      <FeaturedProjects />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 }

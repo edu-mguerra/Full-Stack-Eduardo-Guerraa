@@ -1,19 +1,5 @@
 import { useEffect, useState } from "react";
-
-type GitHubRepo = {
-  id: number;
-  name: string;
-  description: string | null;
-  html_url: string;
-  language: string | null;
-  stargazers_count: number;
-  forks_count: number;
-  created_at: string;
-  updated_at: string;
-  topics?: string[];
-  license?: { name: string } | null;
-  fork: boolean;
-};
+import { GitHubRepo } from "@/types";
 
 export const useGitHubRepos = () => {
   const [projects, setProjects] = useState<GitHubRepo[]>([]);

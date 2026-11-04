@@ -1,23 +1,18 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import { useGitHubRepos } from "./api";
 import "./style.css";
 import {
   FiGithub,
   FiStar,
-  FiCode,
   FiFolder,
   FiChevronLeft,
   FiChevronRight,
   FiChevronDown,
 } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
-
-
-const FEATURED_REPO_NAMES = [
-  "fazenda-clima",
-  "LaserControl-High-Availability-Production-System",
-  "gerenciador-rede-dotnet",
-];
+import { FEATURED_REPO_NAMES, IGNORED_REPO_NAMES } from "@/data/featuredProjects";
 
 export default function Projects() {
   const { loading, projects, error } = useGitHubRepos();
@@ -41,7 +36,10 @@ export default function Projects() {
   if (error) return <div className="projectsError"><p>Erro: {error}</p></div>;
 
   const curatedProjects = projects.filter(
-    (repo) => !repo.fork && !FEATURED_REPO_NAMES.includes(repo.name)
+    (repo) =>
+      !repo.fork &&
+      !FEATURED_REPO_NAMES.includes(repo.name) &&
+      !IGNORED_REPO_NAMES.includes(repo.name)
   );
 
   const allLanguages = [...new Set(curatedProjects.map(repo => repo.language).filter((lang): lang is string => Boolean(lang)))];

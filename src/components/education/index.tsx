@@ -1,47 +1,15 @@
+"use client";
+
 import React from 'react';
 import './style.css';
 import { Certificatee } from './certifica/certificate';
-import { Stats } from './stats/page';
+import { Stats } from './stats';
 import { motion } from 'framer-motion';
 import { 
-  FiBookOpen, FiBriefcase, FiCode, FiCpu, FiDatabase, FiServer, 
-  FiLayout, FiPenTool, FiGitBranch, FiMonitor, FiAward, FiTrendingUp, 
+  FiBookOpen, FiBriefcase, FiCode, 
   FiCalendar, FiMapPin, FiCheckCircle
 } from 'react-icons/fi';
-
-const educationData = [
-  {
-    id: 1,
-    title: "Análise e Desenvolvimento de Sistemas",
-    degree: "Graduação",
-    institution: "Universidade Federal do Vale do São Francisco (UNIVASF)",
-    period: "2024 - 2027",
-    status: "Em andamento",
-    type: "academic",
-    tags: ["Tecnologia", "Desenvolvimento", "Software"],
-    icon: <FiBookOpen size={24} />
-  },
-  {
-    id: 2,
-    title: "Engenharia de Software",
-    degree: "Bacharelado",
-    institution: "Unicesumar",
-    period: "2025 - 2029",
-    status: "Em andamento",
-    type: "engineering",
-    tags: ["Engenharia", "Software", "Arquitetura"],
-    icon: <FiCpu size={24} />
-  }
-];
-
-const techStack = [
-  { category: "Front-end", icon: <FiLayout size={18} />, items: ["React", "Next.js", "React Native", "TypeScript", "Tailwind"] },
-  { category: "Back-end", icon: <FiServer size={18} />, items: ["Node.js", "Express", "C#", ".Net"] },
-  { category: "Banco de Dados", icon: <FiDatabase size={18} />, items: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"] },
-  { category: "DevOps/Infra", icon: <FiGitBranch size={18} />, items: ["Linux", "Git", "Docker"] },
-  { category: "Design", icon: <FiPenTool size={18} />, items: ["Figma", "UI/UX"] },
-  { category: "Outros", icon: <FiMonitor size={18} />, items: ["Clean Code", "SOLID", "Scrum"] },
-];
+import { educationData, techStack } from '@/data/education';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -153,8 +121,6 @@ export default function Education() {
               
               <div className="experienceContentWrapper">
                 <div className="experienceMainInfo">
-                  
-                  
                   <div className="experienceDetails">
                     <div className="experienceHeader">
                       <div className="experienceHeaderRow">
@@ -197,8 +163,6 @@ export default function Education() {
                         ))}
                       </div>
                     </div>
-
-                    
                   </div>
                 </div>
               </div>

@@ -6,68 +6,100 @@
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  padding: 20px;
-  background: #0a0a0a;
-}
-
-.canvasBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  padding: 40px 20px;
+  background: radial-gradient(circle at 75% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 25% 50%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+              #0a0a0a;
 }
 
 .contentWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
   max-width: 1400px;
   width: 100%;
   position: relative;
   z-index: 2;
 }
 
-.textContainer {
+.heroLeftCol {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.textContainer.heroRightCol {
   flex: 1;
-  color: white;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 700px;
+  justify-content: center;
+  max-width: 620px;
+  min-height: 440px;
+}
+
+.sphereInteractiveWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 440px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+  opacity: 0.85;
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
+
+.sphereInteractiveWrapper:hover {
+  opacity: 1;
 }
 
 .divText {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  pointer-events: none;
+}
+
+.divText .buttonContainer,
+.divText .buttonWrapper,
+.divText .buttonH,
+.divText .cvDropdownMenu {
+  pointer-events: auto;
 }
 
 .titleWrapper {
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   position: relative;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 3.2rem;
   font-weight: 800;
   margin: 0;
-  line-height: 1.1;
-  letter-spacing: 1px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .titlePart {
   background: linear-gradient(90deg, #ffffff 30%, #a0a0a0 100%);
- background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
 }
@@ -93,8 +125,8 @@
 
 .techBadges {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -102,10 +134,10 @@
 .techBadge {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -127,14 +159,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 25px;
+  gap: 15px;
+  margin-bottom: 18px;
   width: 100%;
   position: relative;
 }
 
 .line {
-  width: 80px;
+  width: 50px;
   height: 2px;
   background: linear-gradient(90deg, transparent, #667eea, #f093fb, transparent);
   flex-shrink: 0;
@@ -142,10 +174,10 @@
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   color: #ffffff;
-  font-weight: 300;
-  letter-spacing: 4px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   margin: 0;
   white-space: nowrap;
@@ -165,22 +197,22 @@
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #b0b0b0;
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   text-align: center;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .buttonContainer {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
 }
 
 .buttonWrapper {
@@ -191,10 +223,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 16px 36px;
-  border-radius: 50px;
-  font-size: 1.1rem;
+  gap: 10px;
+  padding: 11px 24px;
+  border-radius: 40px;
+  font-size: 0.92rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -204,11 +236,21 @@
   z-index: 1;
 }
 
-.downloadBtn {
+.projectsBtn {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   backdrop-filter: blur(10px);
+}
+
+.projectsBtn:hover {
+  background: rgba(102, 126, 234, 0.18);
+  border-color: rgba(102, 126, 234, 0.55);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.projectsBtn:hover .btnGlow {
+  transform: translateX(100%);
 }
 
 .contactBtn {
@@ -229,10 +271,6 @@
   transition: transform 0.6s ease;
 }
 
-.downloadBtn:hover .btnGlow {
-  transform: translateX(100%);
-}
-
 .contactBtn::before {
   content: '';
   position: absolute;
@@ -250,14 +288,108 @@
   opacity: 1;
 }
 
+.contactDropdownWrapper {
+  position: relative;
+}
+
+.btnChevron {
+  margin-left: 6px;
+  font-size: 1.1rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnChevron.rotate {
+  transform: rotate(180deg);
+}
+
+.contactDropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 270px;
+  z-index: 30;
+
+  background: rgba(18, 18, 26, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0.5rem;
+
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55),
+              0 0 25px rgba(102, 126, 234, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  animation: contactDropdownFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contactDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.contactDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.contactDropdownItem:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateX(3px);
+}
+
+.contactItemIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.contactDropdownItem:hover .contactItemIcon {
+  transform: scale(1.08);
+}
+
+.contactItemInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contactItemName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f5f5f5 !important;
+}
+
+.contactItemSub {
+  font-size: 0.74rem;
+  color: #a0a0a0 !important;
+  line-height: 1.3;
+}
+
 .buttonH:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-}
-
-.downloadBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(102, 126, 234, 0.5);
 }
 
 .btnIcon {
@@ -305,115 +437,39 @@
   border-radius: 1px;
 }
 
-/* ===== Dropdown de seleção de CV ===== */
-
-.btnChevron {
-  transition: transform 0.3s ease;
-}
-
-.btnChevron.rotate {
-  transform: rotate(180deg);
-}
-
-.cvDropdownMenu {
-  position: absolute;
-  top: calc(100% + 0.75rem);
-  left: 0;
-  min-width: 220px;
-  z-index: 20;
-
-  background: rgba(20, 20, 25, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 0.5rem;
-
-  backdrop-filter: blur(12px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-
-  animation: cvDropdownFadeIn 0.2s ease;
-}
-
-@keyframes cvDropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cvDropdownItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-
-  padding: 0.65rem 0.9rem;
-  border-radius: 10px;
-
-  text-decoration: none;
-  color: #f0f0f0;
-
-  transition: background 0.2s ease;
-}
-
-.cvDropdownItem:hover {
-  background: rgba(102, 126, 234, 0.15);
-}
-
-.cvDropdownLabel {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #f0f0f0;
-}
-
-.cvDropdownSub {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-}
-
 @media (max-width: 1200px) {
   .contentWrapper {
-    gap: 60px;
+    gap: 35px;
   }
   
   .title {
-    font-size: 4.5rem;
+    font-size: 2.8rem;
   }
 }
 
 @media (max-width: 1024px) {
   .title {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   
   .description {
-    font-size: 1.3rem;
-    letter-spacing: 3px;
-  }
-  
-  .floatingElements {
-    display: none;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
   }
 }
 
 @media (max-width: 900px) {
   .contentWrapper {
     flex-direction: column;
-    gap: 50px;
+    gap: 35px;
   }
   
   .title {
-    font-size: 3.8rem;
+    font-size: 2.3rem;
   }
   
   .techBadges {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   
   .buttonContainer {
@@ -424,129 +480,124 @@
 
 @media (max-width: 768px) {
   .section {
-    min-height: 90vh;
+    min-height: auto;
+    padding: 35px 15px;
   }
   
   .title {
-    font-size: 3.2rem;
+    font-size: 2.1rem;
   }
   
   .description {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
   }
   
   .line {
-    width: 50px;
+    width: 35px;
   }
   
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
   }
   
   .buttonH {
-    padding: 14px 28px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    font-size: 0.88rem;
   }
 }
 
 @media (max-width: 640px) {
   .title {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
   
   .description {
-    font-size: 1.1rem;
-    letter-spacing: 1.5px;
+    font-size: 0.88rem;
+    letter-spacing: 1px;
     white-space: normal;
     line-height: 1.4;
   }
   
   .descriptionContainer {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
   
   .line {
-    width: 80px;
+    width: 50px;
     height: 1px;
   }
   
   .subtitle {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 0.88rem;
+    margin-bottom: 24px;
   }
   
   .buttonContainer {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
   
   .buttonH {
     width: 100%;
   }
 
-  .cvDropdownMenu {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 280px;
-  }
-  
   .techBadges {
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   
   .techBadge {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
   .section {
-    padding: 20px 15px;
+    padding: 25px 12px;
   }
   
   .title {
-    font-size: 2.4rem;
+    font-size: 1.85rem;
   }
   
   .description {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
   }
   
   .buttonH {
-    padding: 12px 24px;
-    font-size: 0.95rem;
+    padding: 9px 18px;
+    font-size: 0.84rem;
   }
   
   .scrollIndicator {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   
   .scrollLine {
-    height: 30px;
+    height: 25px;
   }
 }
 
 @media (max-width: 320px) {
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   .description {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
   
   .buttonContainer {
-    max-width: 250px;
+    max-width: 240px;
   }
   
   .buttonH {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }

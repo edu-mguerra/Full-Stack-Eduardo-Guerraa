@@ -1,7 +1,7 @@
 .projects {
   background: transparent;
   color: #f0f0f0;
-  padding: 5rem 2rem;
+  padding: 3.5rem 1.5rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, sans-serif;
   position: relative;
@@ -33,13 +33,13 @@
 
 .projectsHeader {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.8rem;
   position: relative;
   z-index: 1;
 }
 
 .titleProjects {
-  font-size: 3.5rem;
+  font-size: 2.4rem;
   font-weight: 800;
 
   background: linear-gradient(90deg, #667eea, #f093fb, #4facfe);
@@ -47,17 +47,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
 .headerDivider {
-  width: 100px;
-  height: 4px;
+  width: 70px;
+  height: 3px;
 
   background: linear-gradient(90deg, #667eea, #f093fb);
 
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.2rem;
   border-radius: 2px;
   position: relative;
 }
@@ -71,25 +71,25 @@
 
   transform: translateX(-50%);
 
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 
   background: #4facfe;
   border-radius: 50%;
 
-  box-shadow: 0 0 15px #4facfe;
+  box-shadow: 0 0 12px #4facfe;
 }
 
 .sectionSubtitle {
   color: #a0a0a0;
-  font-size: 1.2rem;
-  max-width: 600px;
+  font-size: 0.98rem;
+  max-width: 540px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 .containerProjects {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 
   position: relative;
@@ -100,9 +100,9 @@
   background: rgba(25, 25, 25, 0.8);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 20px;
 
-  padding: 3rem;
+  padding: 2rem;
 
   backdrop-filter: blur(10px);
 
@@ -110,16 +110,16 @@
 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .projectItem {
-  padding: 2rem;
+  padding: 1.6rem;
 
   background: rgba(30, 30, 30, 0.6);
 
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  border-radius: 14px;
 
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -197,7 +197,7 @@
 }
 
 .projectBody h3 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 700;
 
   color: #f0f0f0;
@@ -326,6 +326,78 @@
   margin: 0;
 }
 
+.architectureIntro {
+  margin-bottom: 0.85rem !important;
+}
+
+.architectureLayersGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.architectureLayerCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid #4facfe;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.architectureLayerCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(102, 126, 234, 0.3);
+  border-left-color: #667eea;
+  transform: translateX(4px);
+}
+
+.layerCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.layerTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.layerIconWrapper {
+  color: #4facfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layerName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  letter-spacing: 0.2px;
+}
+
+.layerBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(79, 172, 254, 0.12);
+  border: 1px solid rgba(79, 172, 254, 0.25);
+  color: #4facfe;
+}
+
+.layerDescription {
+  font-size: 0.88rem !important;
+  color: #a5a5a5 !important;
+  line-height: 1.6 !important;
+}
+
 .highlightSection {
   padding: 1rem 1.25rem;
 
@@ -372,10 +444,6 @@
 
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
 }
-
-/* =========================
-   Responsividade
-========================= */
 
 @media (max-width: 768px) {
   .projects {

@@ -1,5 +1,5 @@
 .contact {
-  padding: 100px 40px;
+  padding: 60px 24px;
   background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
   position: relative;
   overflow: hidden;
@@ -20,14 +20,14 @@
 
 .contactHeader {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 45px;
 }
 
 .contactTitle {
-  font-size: 3.5rem;
-  font-weight: 300;
+  font-size: 2.4rem;
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   background: linear-gradient(135deg, #fff 0%, #667eea 50%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,10 +36,10 @@
 }
 
 .headerDivider {
-  width: 120px;
-  height: 4px;
+  width: 70px;
+  height: 3px;
   background: linear-gradient(90deg, #667eea, #764ba2);
-  margin: 0 auto 25px auto;
+  margin: 0 auto 16px auto;
   border-radius: 4px;
   position: relative;
 }
@@ -50,8 +50,8 @@
   top: -2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 8px;
+  width: 16px;
+  height: 7px;
   background: #667eea;
   border-radius: 4px;
   animation: pulse 2s infinite;
@@ -63,13 +63,12 @@
 }
 
 .contactSubtitle {
-  font-size: 1.3rem;
+  font-size: 0.98rem;
   color: #b0b0b0;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 540px;
   margin: 0 auto;
-  font-style: italic;
 }
 
 .contactGrid2x2 {
@@ -244,7 +243,6 @@
   backdrop-filter: blur(10px);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .contact {
     padding: 80px 30px;
