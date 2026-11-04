@@ -14,7 +14,8 @@ import { featuredProjects } from "@/data/featuredProjects";
 const getLayerIcon = (layerName: string) => {
   const normalized = layerName.toLowerCase();
   if (normalized.includes("mobile")) return <FiSmartphone size={16} />;
-  if (normalized.includes("back")) return <FiServer size={16} />;
+  if (normalized.includes("back") || normalized.includes("api") || normalized.includes("server")) return <FiServer size={16} />;
+  if (normalized.includes("shared") || normalized.includes("layer")) return <FiLayers size={16} />;
   return <FiMonitor size={16} />;
 };
 

@@ -65,15 +65,46 @@ export const featuredProjects: FeaturedProject[] = [
   {
     number: "02",
     icon: <FiCpu size={20} />,
-    name: "LaserControl",
-    tagline: "Controle de máquina a laser com operação offline-first",
+    name: "LaserControl — Sistema de Produção a Laser",
+    tagline: "Sistema industrial de alta disponibilidade (Offline-First) para chão de fábrica, integração Serial Port e sincronização resiliente",
     problem:
-      "O ambiente de produção tem conexão instável, mas a operação da máquina não pode parar. O sistema precisa continuar funcionando mesmo sem rede e sincronizar depois, sem perder comandos.",
+      "Em linhas industriais de gravação a laser, oscilações ou quedas totais de conectividade não podem paralisar o chão de fábrica. O sistema precisava operar de forma 100% autônoma sem rede, integrar-se diretamente a hardware via porta Serial (RS-232), eliminar riscos de perda ou duplicação de ordens de serviço e rastrear com precisão a transferência de peças e a responsabilidade entre operadores.",
     architecture:
-      "Aplicação desktop em C#/WinForms se comunica diretamente com o hardware via SerialPort. Uma API em ASP.NET Core cuida da sincronização em background assim que a conexão é restabelecida.",
+      "Arquitetura distribuída e modular em três camadas fundamentais (Desktop Client, Web API intermediária e Shared Library), projetada sob a filosofia Offline-First para manter a fábrica ativa ininterruptamente:",
+    architectureLayers: [
+      {
+        layer: "Desktop App",
+        badge: "C# (.NET) & ReaLTaiizor UI",
+        description:
+          "Aplicação Windows Forms com Material UI desenvolvida para operadores industriais. Responsável pela interface operacional em tempo real, envio de comandos via porta Serial (RS-232/COM) para máquinas de gravação a laser (com Modo Simulador inteligente para testes sem hardware) e persistência de contingência em cofre local SQLite (producao_offline.db).",
+      },
+      {
+        layer: "Back-end & Web API",
+        badge: "ASP.NET Core & MySQL",
+        description:
+          "API REST intermediária que centraliza as regras de negócio de produção, controle de acesso baseado em perfis (RBAC com Master e Operadores) e segurança com hash de senhas via BCrypt. Gerencia o banco de dados principal MySQL com rotina de Auto-Migration e Seed inicial automático, dispensando execução manual de scripts SQL.",
+      },
+      {
+        layer: "LaserProduction.Shared",
+        badge: "Class Library & DTOs",
+        description:
+          "Biblioteca de classes compartilhada entre o Desktop e a Web API que unifica entidades de domínio, contratos e DTOs (UsuarioDto, NovaProducaoDto, ProducaoOffline). Assegura tipagem estrita, consistência contratual e validações idênticas em toda a comunicação entre cliente e servidor.",
+      },
+    ],
     highlight:
-      "SQLite como fila local: cada comando e leitura é persistido no disco antes de ser sincronizado, garantindo que nenhum dado se perca mesmo com quedas de conexão prolongadas.",
-    stack: ["C#", "WinForms", "ASP.NET Core", "SQLite", "SerialPort"],
+      "Guardião Offline e Sincronização em 4 Etapas: A cada 60s, uma rotina em background realiza health checks na API. Ao identificar o restabelecimento da rede, resgata a fila de TAGs retidas no SQLite local, despacha a carga para a Web API (MySQL) e, mediante retorno HTTP 200 OK, expurga com segurança o registro local. Inclui ainda fluxo atômico de transferência entre máquinas com retenção de status ('Aguardando Início') para garantir auditoria operacional estrita.",
+    stack: [
+      "C#",
+      ".NET",
+      "Windows Forms",
+      "ReaLTaiizor",
+      "ASP.NET Core",
+      "MySQL",
+      "SQLite",
+      "SerialPort (RS-232)",
+      "BCrypt",
+      "Offline-First",
+    ],
     githubUrl: "https://github.com/edu-mguerra/LaserControl-High-Availability-Production-System",
     demoUrl: "",
     proprietary: false,
