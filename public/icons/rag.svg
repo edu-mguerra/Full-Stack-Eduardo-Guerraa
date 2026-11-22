@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="ragGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <!-- Vector cube database + magnifying glass / retrieval -->
+  <path d="M50 18 L80 34 L50 50 L20 34 Z" fill="url(#ragGrad)" opacity="0.9"/>
+  <path d="M20 34 L50 50 L50 82 L20 66 Z" fill="url(#ragGrad)" opacity="0.7"/>
+  <path d="M80 34 L50 50 L50 82 L80 66 Z" fill="url(#ragGrad)" opacity="0.85"/>
+  <circle cx="68" cy="68" r="14" fill="#0f172a" stroke="#ec4899" stroke-width="4"/>
+  <path d="M78 78 L90 90" stroke="#ec4899" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="68" cy="68" r="5" fill="#38bdf8"/>
+</svg>

@@ -96,13 +96,64 @@
   z-index: 1;
 }
 
+.projectTabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.projectTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #a0a0a0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.projectTabBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.projectTabBtn.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.25), rgba(79, 172, 254, 0.25));
+  border-color: #667eea;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.25);
+}
+
+.projectTabBtn .tabIndex {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.projectTabBtn.active .tabIndex {
+  background: #667eea;
+  color: #ffffff;
+}
+
 .projectsContent {
   background: rgba(25, 25, 25, 0.8);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
 
-  padding: 2rem;
+  padding: 1.5rem;
 
   backdrop-filter: blur(10px);
 
@@ -121,17 +172,77 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
 
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projectItem:hover {
-  transform: translateX(10px);
-
   border-color: rgba(102, 126, 234, 0.3);
 
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(102, 126, 234, 0.1);
+}
+
+.projectPagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.paginationBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.paginationBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.paginationIndicators {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.paginationDot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.paginationDot.active {
+  width: 26px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #667eea, #4facfe);
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
 }
 
 .projectContent {
@@ -447,51 +558,167 @@
 
 @media (max-width: 768px) {
   .projects {
-    padding: 3rem 1rem;
+    padding: 2.5rem 0.85rem;
   }
 
   .titleProjects {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+  }
+
+  .projectTabs {
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+  }
+
+  .projectTabBtn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    gap: 0.45rem;
   }
 
   .projectsContent {
-    padding: 2rem;
+    padding: 0.75rem;
+    border-radius: 16px;
   }
 
   .projectItem {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
   }
 
   .projectContent {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
   .stepIndicator {
     flex-direction: row;
-
     width: 100%;
-
     justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
 
-    gap: 1.5rem;
+  .stepNumber {
+    font-size: 1.4rem;
+  }
+
+  .stepIcon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
   }
 
   .projectTitleRow {
     flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .projectBody h3 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .projectTagline {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+
+  .projectSection {
+    margin-bottom: 1rem;
+  }
+
+  .architectureLayerCard {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .layerName {
+    font-size: 0.88rem;
+  }
+
+  .layerBadge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .layerDescription {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .highlightSection {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .techStack {
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .techItem {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .projectPagination {
+    margin-top: 1.2rem;
+    padding: 0 0.25rem;
+  }
+
+  .paginationBtn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+    gap: 0.35rem;
+    border-radius: 8px;
+  }
+
+  .paginationIndicators {
+    gap: 0.45rem;
+  }
+
+  .paginationDot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .paginationDot.active {
+    width: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .titleProjects {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.88rem;
+  }
+
+  .projectTabBtn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.76rem;
+  }
+
+  .projectTabBtn .tabIndex {
+    font-size: 0.68rem;
+    padding: 1px 5px;
   }
 
   .projectBody h3 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   .projectItem {
-    padding: 1.25rem;
+    padding: 0.85rem;
+  }
+
+  .paginationBtn span {
+    display: none;
+  }
+
+  .paginationBtn {
+    padding: 0.5rem 0.75rem;
   }
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="autoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <!-- Gear + lightning bolt -->
+  <path d="M50 20 L54 28 L63 25 L65 34 L74 34 L73 43 L81 46 L76 54 L81 61 L73 64 L74 73 L65 73 L63 82 L54 79 L50 87 L46 79 L37 82 L35 73 L26 73 L27 64 L19 61 L24 54 L19 46 L27 43 L26 34 L35 34 L37 25 L46 28 Z" fill="url(#autoGrad)" opacity="0.85"/>
+  <circle cx="50" cy="54" r="16" fill="#0f172a"/>
+  <!-- Bolt in center -->
+  <path d="M52 44 L44 54 L49 54 L48 64 L56 53 L51 53 Z" fill="#fbbf24"/>
+</svg>

@@ -41,63 +41,13 @@ export default function Education() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="educationTitle">Formação & Experiência</h2>
+          <h2 className="educationTitle">Experiência & Formação</h2>
           <div className="headerLine"></div>
-          <p className="educationSubtitle">Minha jornada acadêmica e profissional em tecnologia</p>
+          <p className="educationSubtitle">Minha jornada profissional e acadêmica em tecnologia</p>
         </motion.div>
       </div>
 
       <div className="educationContent">
-        <motion.div 
-          className="educationSection"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <div className="sectionHeader">
-            <div className="sectionIconWrapper">
-              <FiBookOpen size={28} />
-            </div>
-            <h3 className="sectionTitle">Formação Acadêmica</h3>
-          </div>
-          
-          <div className="educationItems">
-            {educationData.map((edu) => (
-              <motion.div key={edu.id} className="educationCard" variants={itemVariants}>
-                <div className="educationIcon">
-                  <div className={`iconWrapper ${edu.type}`}>
-                    {edu.icon}
-                  </div>
-                </div>
-                <div className="educationDetails">
-                  <div className="educationHeaderRow">
-                    <h3>{edu.title}</h3>
-                    <span className="badge">{edu.degree}</span>
-                  </div>
-                  <p className="institution">
-                    <FiMapPin size={16} />
-                    {edu.institution}
-                  </p>
-                  <div className="educationMeta">
-                    <div className="metaItem">
-                      <FiCalendar size={16} />
-                      <span className="date">{edu.period}</span>
-                    </div>
-                    <div className="metaItem">
-                      <FiCheckCircle size={16} />
-                      <span className="status inProgress">{edu.status}</span>
-                    </div>
-                  </div>
-                  <div className="educationTags">
-                    {edu.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         <motion.div 
           className="educationSection"
           initial={{ opacity: 0, x: -20 }}
@@ -167,6 +117,56 @@ export default function Education() {
                 </div>
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="educationSection"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="sectionHeader">
+            <div className="sectionIconWrapper">
+              <FiBookOpen size={28} />
+            </div>
+            <h3 className="sectionTitle">Formação Acadêmica</h3>
+          </div>
+          
+          <div className="educationItems academicGrid">
+            {educationData.map((edu) => (
+              <motion.div key={edu.id} className="educationCard" variants={itemVariants}>
+                <div className="educationIcon">
+                  <div className={`iconWrapper ${edu.type}`}>
+                    {edu.icon}
+                  </div>
+                </div>
+                <div className="educationDetails">
+                  <div className="educationHeaderRow">
+                    <h3>{edu.title}</h3>
+                    {edu.degree ? <span className="badge">{edu.degree}</span> : null}
+                  </div>
+                  <p className="institution">
+                    <FiMapPin size={16} />
+                    {edu.institution}
+                  </p>
+                  <div className="educationMeta">
+                    <div className="metaItem">
+                      <FiCalendar size={16} />
+                      <span className="date">{edu.period}</span>
+                    </div>
+                    <div className="metaItem">
+                      <FiCheckCircle size={16} />
+                      <span className="status inProgress">{edu.status}</span>
+                    </div>
+                  </div>
+                  <div className="educationTags">
+                    {edu.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 

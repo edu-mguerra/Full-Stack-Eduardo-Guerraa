@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import "./style.css";
 import {
   FiChevronRight,
+  FiChevronLeft,
   FiTarget,
   FiLayers,
   FiLock,
@@ -9,6 +13,7 @@ import {
   FiServer,
 } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import { featuredProjects } from "@/data/featuredProjects";
 
 const getLayerIcon = (layerName: string) => {
@@ -20,6 +25,17 @@ const getLayerIcon = (layerName: string) => {
 };
 
 export default function FeaturedProjects() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const project = featuredProjects[currentIndex];
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < featuredProjects.length - 1 ? prev + 1 : prev));
+  };
+
   return (
     <section className="projects" id="projects">
       <div className="projectsHeader">
@@ -31,9 +47,30 @@ export default function FeaturedProjects() {
       </div>
 
       <div className="containerProjects">
+        <div className="projectTabs">
+          {featuredProjects.map((p, idx) => (
+            <button
+              key={p.number}
+              type="button"
+              className={`projectTabBtn ${idx === currentIndex ? "active" : ""}`}
+              onClick={() => setCurrentIndex(idx)}
+            >
+              <span className="tabIndex">{p.number}</span>
+              <span className="tabTitle">{p.name.split("—")[0].trim()}</span>
+            </button>
+          ))}
+        </div>
+
         <div className="projectsContent">
-          {featuredProjects.map((project) => (
-            <div className="projectItem" key={project.number}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={project.number}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3 }}
+              className="projectItem"
+            >
               <div className="projectContent">
                 <div className="stepIndicator">
                   <div className="stepNumber">{project.number}</div>
@@ -116,8 +153,44 @@ export default function FeaturedProjects() {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="projectPagination">
+          <button
+            type="button"
+            className="paginationBtn"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            aria-label="Projeto anterior"
+          >
+            <FiChevronLeft size={18} />
+            <span>Anterior</span>
+          </button>
+
+          <div className="paginationIndicators">
+            {featuredProjects.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`paginationDot ${idx === currentIndex ? "active" : ""}`}
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`Ver projeto ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="paginationBtn"
+            onClick={handleNext}
+            disabled={currentIndex === featuredProjects.length - 1}
+            aria-label="Próximo projeto"
+          >
+            <span>Próximo</span>
+            <FiChevronRight size={18} />
+          </button>
         </div>
       </div>
     </section>

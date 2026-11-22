@@ -4,7 +4,7 @@ import './style.css';
 import ImageSwitcher from './sectionImg';
 import InteractiveParticleSphere from '../ParticleSphere';
 import { useState, useRef, useEffect } from 'react';
-import { FiMessageSquare, FiCode, FiCpu, FiZap, FiChevronRight, FiChevronDown, FiFolder } from 'react-icons/fi';
+import { FiMessageSquare, FiCode, FiCpu, FiZap, FiChevronRight, FiChevronDown, FiFolder, FiCloud } from 'react-icons/fi';
 import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const contactChannels = [
@@ -31,9 +31,42 @@ const contactChannels = [
   },
 ];
 
+const heroTitles = [
+  "Desenvolvedor Full Stack",
+  "Engenheiro de IA & Agentes",
+  "Sistemas de Alta Disponibilidade",
+  "Aplicações Mobile Offline-First",
+];
+
 export const Hero = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const contactDropdownRef = useRef<HTMLDivElement>(null);
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullText = heroTitles[titleIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && displayText === fullText) {
+      timeout = setTimeout(() => setIsDeleting(true), 1900);
+    } else if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setTitleIndex((prev) => (prev + 1) % heroTitles.length);
+    } else {
+      const speed = isDeleting ? 30 : 65;
+      timeout = setTimeout(() => {
+        setDisplayText(
+          isDeleting
+            ? fullText.substring(0, displayText.length - 1)
+            : fullText.substring(0, displayText.length + 1)
+        );
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, titleIndex]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -75,15 +108,15 @@ export const Hero = () => {
             </div>
 
             <div className='techBadges'>
-              <span className='techBadge'><FiCode /> Front-end</span>
-              <span className='techBadge'><FiCpu /> Back-end</span>
               <span className='techBadge'><FiZap /> Full Stack</span>
+              <span className='techBadge'><FiCpu /> Engenharia de IA</span>
+              <span className='techBadge'><FiCloud /> Cloud & DevOps</span>
             </div>
 
             <div className='descriptionContainer'>
               <div className='line'></div>
               <p className='description'>
-                <span className='typewriter'>Desenvolvedor Full Stack</span>
+                <span className='typewriterText'>{displayText}</span>
               </p>
               <div className='line'></div>
             </div>
