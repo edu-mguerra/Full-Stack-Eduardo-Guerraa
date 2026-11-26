@@ -28,7 +28,7 @@ export const educationData: EducationItem[] = [
 ];
 
 export const techStack: TechCategory[] = [
-  { category: "IA & Agentes", icon: <FiCpu size={18} />, items: ["Python", "LangChain", "LangGraph", "RAG", "LLMs"] },
+  { category: "IA & Agentes", icon: <FiCpu size={18} />, items: ["Python", "LangChain", "LangGraph", "RAG", "LLMs", "Fine-Tuning"] },
   { category: "Back-end", icon: <FiServer size={18} />, items: ["C#", ".NET Core", "NestJS", "Node.js", "Express", "APIs REST"] },
   { category: "Front-end & Mobile", icon: <FiLayout size={18} />, items: ["React", "Next.js", "React Native", "Expo", "TypeScript", "Tailwind CSS"] },
   { category: "Banco de Dados & Cache", icon: <FiDatabase size={18} />, items: ["PostgreSQL", "SQL Server", "MySQL", "SQLite", "MongoDB", "Redis"] },

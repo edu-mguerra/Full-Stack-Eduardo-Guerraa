@@ -30,6 +30,10 @@ export const skillCategories: SkillCategoryGroup[] = [
         name: "OpenAI & Gemini",
         src: "/icons/openai.svg",
       },
+      {
+        name: "Fine-Tuning",
+        src: "/icons/finetuning.svg",
+      },
     ],
   },
   {
